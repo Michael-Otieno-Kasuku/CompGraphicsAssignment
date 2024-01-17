@@ -81,7 +81,7 @@ class MeshSubdivision:
 
         for triangle in triangles:
             midpoints = [((points[i][0] + points[j][0]) // 2, (points[i][1] + points[j][1]) // 2)
-                         for i, j in zip(triangle, triangle[1:] + [triangle[0]])]
+                         for i, j in zip(triangle, tuple(triangle[1:]) + (triangle[0],))]
 
             new_indices = list(range(len(new_points), len(new_points) + len(midpoints)))
             new_points.extend(midpoints)
@@ -158,39 +158,3 @@ if __name__ == "__main__":
 
     # Save the result
     mesh_subdivision.save_image("subdivided_mesh_oop.png")
-
-"""
-def subdivide_mesh(self, points, triangles):
-    """
-    Subdivide the triangular mesh.
-
-    Parameters:
-    - points (list): List of points.
-    - triangles (list): List of triangles represented by point indices.
-
-    Returns:
-    list: List of points and triangles after subdivision.
-    """
-    new_points = points.copy()
-    new_triangles = []
-
-    for triangle in triangles:
-        midpoints = [((points[i][0] + points[j][0]) // 2, (points[i][1] + points[j][1]) // 2)
-                     for i, j in zip(triangle, triangle[1:] + [triangle[0]])]
-
-        # Convert midpoints to lists
-        midpoints = [list(point) for point in midpoints]
-
-        new_indices = list(range(len(new_points), len(new_points) + len(midpoints)))
-        new_points.extend(midpoints)
-
-        new_triangles.extend([
-            (triangle[0], new_indices[0], new_indices[2]),
-            (new_indices[0], triangle[1], new_indices[1]),
-            (new_indices[2], new_indices[1], triangle[2]),
-            (new_indices[0], new_indices[1], new_indices[2])
-        ])
-
-    return new_points, new_triangles
-
-"""
