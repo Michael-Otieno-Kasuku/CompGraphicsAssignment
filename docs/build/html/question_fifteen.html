@@ -60,12 +60,98 @@
 <li class="toctree-l1"><a class="reference internal" href="question_twelve.html">Question Tweleve</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_thirteen.html">Question Thirteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fourteen.html">Question Fourteen</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Fifteen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Fifteen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-structure">Class Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gate-class">Gate Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Gate"><code class="docutils literal notranslate"><span class="pre">Gate</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.__init__"><code class="docutils literal notranslate"><span class="pre">Gate.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.boundingRect"><code class="docutils literal notranslate"><span class="pre">Gate.boundingRect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.paint"><code class="docutils literal notranslate"><span class="pre">Gate.paint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.contextMenuEvent"><code class="docutils literal notranslate"><span class="pre">Gate.contextMenuEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.hoverEnterEvent"><code class="docutils literal notranslate"><span class="pre">Gate.hoverEnterEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.hoverLeaveEvent"><code class="docutils literal notranslate"><span class="pre">Gate.hoverLeaveEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.add_input"><code class="docutils literal notranslate"><span class="pre">Gate.add_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.add_output"><code class="docutils literal notranslate"><span class="pre">Gate.add_output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gate.update_connections"><code class="docutils literal notranslate"><span class="pre">Gate.update_connections()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gateinput-class">GateInput Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#GateInput"><code class="docutils literal notranslate"><span class="pre">GateInput</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GateInput.__init__"><code class="docutils literal notranslate"><span class="pre">GateInput.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gateoutput-class">GateOutput Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#GateOutput"><code class="docutils literal notranslate"><span class="pre">GateOutput</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GateOutput.__init__"><code class="docutils literal notranslate"><span class="pre">GateOutput.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connection-class">Connection Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Connection"><code class="docutils literal notranslate"><span class="pre">Connection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Connection.__init__"><code class="docutils literal notranslate"><span class="pre">Connection.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Connection.update_path"><code class="docutils literal notranslate"><span class="pre">Connection.update_path()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#circuitscene-class">CircuitScene Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#CircuitScene"><code class="docutils literal notranslate"><span class="pre">CircuitScene</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#CircuitScene.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitScene.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CircuitScene.contextMenuEvent"><code class="docutils literal notranslate"><span class="pre">CircuitScene.contextMenuEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CircuitScene.add_gate"><code class="docutils literal notranslate"><span class="pre">CircuitScene.add_gate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CircuitScene.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">CircuitScene.mousePressEvent()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#circuitdesigner-class">CircuitDesigner Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#CircuitDesigner"><code class="docutils literal notranslate"><span class="pre">CircuitDesigner</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#CircuitDesigner.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitDesigner.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CircuitDesigner.initUI"><code class="docutils literal notranslate"><span class="pre">CircuitDesigner.initUI()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="question_sixteen.html">Question Sixteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_seventeen.html">Question Seventeen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentythree.html">Question Twenty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyseven.html">Question Twenty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyeight.html">Question Twenty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentynine.html">Question Twenty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirty.html">Question Thirty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyone.html">Question Thirty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtytwo.html">Question Thirty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtythree.html">Question Thirty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfour.html">Question Thirty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfive.html">Question Thirty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtysix.html">Question Thirty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyseven.html">Question Thirty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyeight.html">Question Thirty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtynine.html">Question Thirty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourty.html">Question Fourty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyone.html">Question Fourty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtytwo.html">Question Fourty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtythree.html">Question Fourty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfour.html">Question Fourty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfive.html">Question Fourty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtysix.html">Question Fourty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyseven.html">Question Fourty Seven</a></li>
 </ul>
 
         </div>
@@ -94,6 +180,378 @@
              
   <section id="question-fifteen">
 <h1>Question Fifteen<a class="headerlink" href="#question-fifteen" title="Link to this heading"></a></h1>
+<p>Circuit-layout programs are variants of paint programs. Consider the design of logical
+circuits using the Boolean and, or, and not functions. Each of these functions is provided
+by one of the three types of integrated circuits (gates),the symbols for which are shown in
+Figure below. Write a program that allows the user to design a logical circuit by selecting
+gates from a menu and positioning them on the screen. Consider methods for connecting
+the outputs of one gate to the inputs of others.</p>
+<section id="introduction">
+<span id="advanced-logical-circuit-designer"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This code demonstrates an advanced logical circuit designer using PyQt5. The designer allows users to create and connect various logic gates.</p>
+</section>
+<section id="class-structure">
+<h2>Class Structure<a class="headerlink" href="#class-structure" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Gate:</strong> Represents a generic logic gate with a specified type (AND, OR, NOT).</p></li>
+<li><p><strong>GateInput:</strong> Represents an input terminal of a gate.</p></li>
+<li><p><strong>GateOutput:</strong> Represents an output terminal of a gate.</p></li>
+<li><p><strong>Connection:</strong> Represents a connection between the output of one gate to the input of another gate.</p></li>
+<li><p><strong>CircuitScene:</strong> QGraphicsScene subclass responsible for managing gates and connections.</p></li>
+<li><p><strong>CircuitDesigner:</strong> Main QWidget for the application, containing the QGraphicsView and the CircuitScene.</p></li>
+</ol>
+</section>
+<section id="gate-class">
+<h2>Gate Class<a class="headerlink" href="#gate-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Gate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Gate</span></span><a class="headerlink" href="#Gate" title="Link to this definition"></a></dt>
+<dd><p>Represents a generic logic gate in the circuit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gate_type</strong> (<em>str</em>) – Type of the gate (e.g., “AND”, “OR”, “NOT”).</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the gate.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the gate.</p></li>
+<li><p><strong>inputs</strong> (<em>list</em>) – List of input terminals.</p></li>
+<li><p><strong>outputs</strong> (<em>list</em>) – List of output terminals.</p></li>
+<li><p><strong>bounding_rect</strong> (<em>QPointF</em>) – Bounding rectangle for the gate.</p></li>
+<li><p><strong>opacity</strong> (<em>float</em>) – Opacity of the gate.</p></li>
+<li><p><strong>parent</strong> (<em>QGraphicsItem</em>) – Parent item of the gate.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gate_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gate.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a new Gate instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gate_type</strong> (<em>str</em>) – Type of the gate.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X-coordinate of the gate’s position.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y-coordinate of the gate’s position.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.boundingRect">
+<span class="sig-name descname"><span class="pre">boundingRect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gate.boundingRect" title="Link to this definition"></a></dt>
+<dd><p>Returns the bounding rectangle of the gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QRectF</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.paint">
+<span class="sig-name descname"><span class="pre">paint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">painter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gate.paint" title="Link to this definition"></a></dt>
+<dd><p>Paints the gate on the QGraphicsView.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>painter</strong> (<em>QPainter</em>) – QPainter instance.</p></li>
+<li><p><strong>option</strong> (<em>QStyleOptionGraphicsItem</em>) – Style options.</p></li>
+<li><p><strong>widget</strong> (<em>QWidget</em>) – QWidget being painted.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.contextMenuEvent">
+<span class="sig-name descname"><span class="pre">contextMenuEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gate.contextMenuEvent" title="Link to this definition"></a></dt>
+<dd><p>Handles the context menu event for the gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>QGraphicsSceneContextMenuEvent</em>) – Context menu event.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.hoverEnterEvent">
+<span class="sig-name descname"><span class="pre">hoverEnterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gate.hoverEnterEvent" title="Link to this definition"></a></dt>
+<dd><p>Handles the hover enter event for the gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>QGraphicsSceneHoverEvent</em>) – Hover event.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.hoverLeaveEvent">
+<span class="sig-name descname"><span class="pre">hoverLeaveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gate.hoverLeaveEvent" title="Link to this definition"></a></dt>
+<dd><p>Handles the hover leave event for the gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>QGraphicsSceneHoverEvent</em>) – Hover event.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.add_input">
+<span class="sig-name descname"><span class="pre">add_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gate.add_input" title="Link to this definition"></a></dt>
+<dd><p>Adds an input terminal to the gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X-coordinate of the input terminal’s position.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y-coordinate of the input terminal’s position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.add_output">
+<span class="sig-name descname"><span class="pre">add_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gate.add_output" title="Link to this definition"></a></dt>
+<dd><p>Adds an output terminal to the gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X-coordinate of the output terminal’s position.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y-coordinate of the output terminal’s position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gate.update_connections">
+<span class="sig-name descname"><span class="pre">update_connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gate.update_connections" title="Link to this definition"></a></dt>
+<dd><p>Updates the connections between gates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="gateinput-class">
+<h2>GateInput Class<a class="headerlink" href="#gateinput-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GateInput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GateInput</span></span><a class="headerlink" href="#GateInput" title="Link to this definition"></a></dt>
+<dd><p>Represents an input terminal of a gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parent_gate</strong> (<em>QGraphicsItem</em>) – Parent gate to which the input belongs.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="GateInput.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_gate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GateInput.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a new GateInput instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent_gate</strong> (<a class="reference internal" href="#Gate" title="Gate"><em>Gate</em></a>) – Parent gate.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X-coordinate of the input terminal’s position.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y-coordinate of the input terminal’s position.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="gateoutput-class">
+<h2>GateOutput Class<a class="headerlink" href="#gateoutput-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GateOutput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GateOutput</span></span><a class="headerlink" href="#GateOutput" title="Link to this definition"></a></dt>
+<dd><p>Represents an output terminal of a gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parent_gate</strong> (<em>QGraphicsItem</em>) – Parent gate to which the output belongs.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="GateOutput.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_gate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GateOutput.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a new GateOutput instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent_gate</strong> (<a class="reference internal" href="#Gate" title="Gate"><em>Gate</em></a>) – Parent gate.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X-coordinate of the output terminal’s position.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y-coordinate of the output terminal’s position.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="connection-class">
+<h2>Connection Class<a class="headerlink" href="#connection-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Connection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#Connection" title="Link to this definition"></a></dt>
+<dd><p>Represents a connection between the output of one gate to the input of another gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>QPointF</em>) – Start point of the connection.</p></li>
+<li><p><strong>end</strong> (<em>QPointF</em>) – End point of the connection.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Connection.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Connection.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a new Connection instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>QPointF</em>) – Start point of the connection.</p></li>
+<li><p><strong>end</strong> (<em>QPointF</em>) – End point of the connection.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Connection.update_path">
+<span class="sig-name descname"><span class="pre">update_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Connection.update_path" title="Link to this definition"></a></dt>
+<dd><p>Updates the path of the connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="circuitscene-class">
+<h2>CircuitScene Class<a class="headerlink" href="#circuitscene-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CircuitScene">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CircuitScene</span></span><a class="headerlink" href="#CircuitScene" title="Link to this definition"></a></dt>
+<dd><p>QGraphicsScene subclass responsible for managing gates and connections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connections</strong> (<em>list</em>) – List of connections in the scene.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="CircuitScene.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CircuitScene.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a new CircuitScene instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CircuitScene.contextMenuEvent">
+<span class="sig-name descname"><span class="pre">contextMenuEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CircuitScene.contextMenuEvent" title="Link to this definition"></a></dt>
+<dd><p>Handles the context menu event for the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>QGraphicsSceneContextMenuEvent</em>) – Context menu event.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CircuitScene.add_gate">
+<span class="sig-name descname"><span class="pre">add_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gate_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CircuitScene.add_gate" title="Link to this definition"></a></dt>
+<dd><p>Adds a gate to the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gate_type</strong> (<em>str</em>) – Type of the gate.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X-coordinate of the gate’s position.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y-coordinate of the gate’s position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CircuitScene.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CircuitScene.mousePressEvent" title="Link to this definition"></a></dt>
+<dd><p>Handles the mouse press event for the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>QMouseEvent</em>) – Mouse press event.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="circuitdesigner-class">
+<h2>CircuitDesigner Class<a class="headerlink" href="#circuitdesigner-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CircuitDesigner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CircuitDesigner</span></span><a class="headerlink" href="#CircuitDesigner" title="Link to this definition"></a></dt>
+<dd><p>Main QWidget for the application, containing the QGraphicsView and the CircuitScene.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CircuitDesigner.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CircuitDesigner.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a new CircuitDesigner instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CircuitDesigner.initUI">
+<span class="sig-name descname"><span class="pre">initUI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CircuitDesigner.initUI" title="Link to this definition"></a></dt>
+<dd><p>Initializes the user interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
 

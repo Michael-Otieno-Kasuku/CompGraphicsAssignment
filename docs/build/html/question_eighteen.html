@@ -63,9 +63,47 @@
 <li class="toctree-l1"><a class="reference internal" href="question_fifteen.html">Question Fifteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_sixteen.html">Question Sixteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_seventeen.html">Question Seventeen</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Eighteen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Eighteen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bresenhamline-class">BresenhamLine Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#BresenhamLine"><code class="docutils literal notranslate"><span class="pre">BresenhamLine</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BresenhamLine.__init__"><code class="docutils literal notranslate"><span class="pre">BresenhamLine.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BresenhamLine.draw_line"><code class="docutils literal notranslate"><span class="pre">BresenhamLine.draw_line()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BresenhamLine.create_image"><code class="docutils literal notranslate"><span class="pre">BresenhamLine.create_image()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentythree.html">Question Twenty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyseven.html">Question Twenty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyeight.html">Question Twenty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentynine.html">Question Twenty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirty.html">Question Thirty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyone.html">Question Thirty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtytwo.html">Question Thirty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtythree.html">Question Thirty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfour.html">Question Thirty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfive.html">Question Thirty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtysix.html">Question Thirty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyseven.html">Question Thirty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyeight.html">Question Thirty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtynine.html">Question Thirty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourty.html">Question Fourty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyone.html">Question Fourty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtytwo.html">Question Fourty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtythree.html">Question Fourty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfour.html">Question Fourty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfive.html">Question Fourty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtysix.html">Question Fourty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyseven.html">Question Fourty Seven</a></li>
 </ul>
 
         </div>
@@ -94,6 +132,69 @@
              
   <section id="question-eighteen">
 <h1>Question Eighteen<a class="headerlink" href="#question-eighteen" title="Link to this heading"></a></h1>
+<p>Write a program to generate the locations of pixels along a rasterized line segment using
+Bresenham’s algorithm. Check that your program works for all slopes and all possible
+locations of the endpoints. What is the initial value of the decision variable?</p>
+<section id="bresenhamline-class">
+<h2>BresenhamLine Class<a class="headerlink" href="#bresenhamline-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BresenhamLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BresenhamLine</span></span><a class="headerlink" href="#BresenhamLine" title="Link to this definition"></a></dt>
+<dd><p>A class for generating pixel locations along a rasterized line segment using Bresenham’s Line Drawing Algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>tuple</em>) – (x, y) coordinates of the starting point.</p></li>
+<li><p><strong>end</strong> (<em>tuple</em>) – (x, y) coordinates of the ending point.</p></li>
+<li><p><strong>points</strong> (<em>list</em>) – List of pixel locations along the line.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="BresenhamLine.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BresenhamLine.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the BresenhamLine object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>tuple</em>) – (x, y) coordinates of the starting point.</p></li>
+<li><p><strong>end</strong> (<em>tuple</em>) – (x, y) coordinates of the ending point.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BresenhamLine.draw_line">
+<span class="sig-name descname"><span class="pre">draw_line</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BresenhamLine.draw_line" title="Link to this definition"></a></dt>
+<dd><p>Generate the locations of pixels along the rasterized line segment using Bresenham’s algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BresenhamLine.create_image">
+<span class="sig-name descname"><span class="pre">create_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'line_image.png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BresenhamLine.create_image" title="Link to this definition"></a></dt>
+<dd><p>Create an image and draw the line on it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Name of the output image file (default is ‘line_image.png’).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Example usage</span>
+    <span class="n">start_point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">end_point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+    <span class="n">bresenham_line</span> <span class="o">=</span> <span class="n">BresenhamLine</span><span class="p">(</span><span class="n">start_point</span><span class="p">,</span> <span class="n">end_point</span><span class="p">)</span>
+    <span class="n">bresenham_line</span><span class="o">.</span><span class="n">draw_line</span><span class="p">()</span>
+    <span class="n">bresenham_line</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="s1">&#39;output_line.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 

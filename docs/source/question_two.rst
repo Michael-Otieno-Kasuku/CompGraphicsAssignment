@@ -10,6 +10,10 @@ Hint: You may use a separate function to define the object in local space and ca
 
 Part a
 ------
+
+EquilateralTriangle3D Class
+---------------------------
+
 .. py:class:: EquilateralTriangle3D
 
    A class for drawing a 3D equilateral triangle with a grey-colored base.
@@ -77,6 +81,10 @@ Part a
 
 Part b
 ------
+
+EquilateralTriangle3D Class
+---------------------------
+
 .. py:class:: EquilateralTriangle3D
 
    A class for drawing a 3D equilateral triangle with a grey-colored base.

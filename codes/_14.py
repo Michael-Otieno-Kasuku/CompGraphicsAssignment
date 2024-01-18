@@ -1,83 +1,96 @@
-"""
-The orientation of an airplane is described by a coordinate system as shown below. The
-forward–backward motion of the joystick controls the up– down rotation with respect to
-the axis running along the length of the airplane, called the pitch. The right–left motion of
-the joystick controls the rotation about this axis, called the roll.Using PIL for Python and docstrings and OOP Write a program that uses
-the mouse to control pitch and roll for the view seen by a pilot. You can do this exercise
-in two dimensions by considering a set of objects to be located far from the airplane, then
-having the mouse control the two-dimensional viewing of these objects.
-"""
-
+import pygame
+from pygame.locals import *
 from PIL import Image, ImageDraw
-import math
-import tkinter as tk
+import sys
+import random
+
+# Constants
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+AIRPLANE_WIDTH, AIRPLANE_HEIGHT = 100, 150
+AIRPLANE_COLOR = (255, 0, 0)  # Red color for the airplane
+OBJECTS_COLOR = (0, 0, 255)   # Blue color for distant objects
 
 class AirplaneView:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-        self.pitch = 0  # Initial pitch angle
-        self.roll = 0   # Initial roll angle
+    def __init__(self):
+        self.pitch_angle = 0
+        self.roll_angle = 0
+        self.mouse_x, self.mouse_y = 0, 0
 
-        # Create an image to represent the scene
-        self.scene_image = Image.new("RGB", (width, height), "white")
-        self.draw_scene()
+    def update_view(self):
+        # Create a blank image using PIL
+        image = Image.new("RGB", (SCREEN_WIDTH, SCREEN_HEIGHT), "white")
+        draw = ImageDraw.Draw(image)
 
-        # Create a Tkinter window to display the scene
-        self.root = tk.Tk()
-        self.root.title("Airplane View")
-        self.canvas = tk.Canvas(self.root, width=width, height=height)
-        self.canvas.pack()
+        # Draw the airplane
+        self.draw_airplane(draw)
 
-        # Bind mouse events to control pitch and roll
-        self.canvas.bind("<B1-Motion>", self.handle_mouse_motion)
+        # Draw distant objects
+        self.draw_distant_objects(draw)
 
-        # Run the Tkinter main loop
-        self.root.after(0, self.update)
-        self.root.mainloop()
+        # Convert PIL image to Pygame surface
+        pygame_image = pygame.image.fromstring(image.tobytes(), image.size, image.mode)
+        return pygame_image
 
-    def draw_scene(self):
-        draw = ImageDraw.Draw(self.scene_image)
+    def draw_airplane(self, draw):
+        # Draw the airplane based on pitch and roll angles
+        airplane_center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+        airplane_rect = (
+            airplane_center[0] - AIRPLANE_WIDTH // 2,
+            airplane_center[1] - AIRPLANE_HEIGHT // 2,
+            airplane_center[0] + AIRPLANE_WIDTH // 2,
+            airplane_center[1] + AIRPLANE_HEIGHT // 2
+        )
+        draw.rectangle(airplane_rect, fill=AIRPLANE_COLOR)
 
-        # Draw a simple scene with objects
-        draw.rectangle((50, 50, 150, 150), fill="blue")   # Object 1
-        draw.rectangle((200, 100, 300, 200), fill="green") # Object 2
-        draw.rectangle((350, 50, 450, 150), fill="red")    # Object 3
+    def draw_distant_objects(self, draw):
+        # Draw distant objects (simple representation)
+        # In a real application, you would have a more complex scene with depth and perspective
+        for _ in range(10):
+            object_x = SCREEN_WIDTH // 2 + 100 * (random.random() - 0.5)
+            object_y = SCREEN_HEIGHT // 2 + 100 * (random.random() - 0.5)
+            object_rect = (
+                object_x - 5, object_y - 5,
+                object_x + 5, object_y + 5
+            )
+            draw.rectangle(object_rect, fill=OBJECTS_COLOR)
 
-    def update(self):
-        # Update the scene based on pitch and roll angles
-        rotated_scene = self.rotate_scene()
+    def handle_mouse_event(self, event):
+        if event.type == MOUSEMOTION:
+            self.mouse_x, self.mouse_y = event.pos
+            self.update_angles()
 
-        # Display the rotated scene on the Tkinter canvas
-        rotated_tk_image = self.convert_pil_to_tk(rotated_scene)
-        self.canvas.create_image(self.width // 2, self.height // 2, image=rotated_tk_image)
+    def update_angles(self):
+        # Update pitch and roll angles based on mouse position
+        self.pitch_angle = (self.mouse_y - SCREEN_HEIGHT // 2) / SCREEN_HEIGHT * 90
+        self.roll_angle = (self.mouse_x - SCREEN_WIDTH // 2) / SCREEN_WIDTH * 90
 
-        # Schedule the next update
-        self.root.after(30, self.update)
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption("Airplane View")
 
-    def rotate_scene(self):
-        # Rotate the scene based on pitch and roll angles
-        rotated_scene = self.scene_image.rotate(self.roll, resample=Image.BICUBIC)
-        rotated_scene = rotated_scene.rotate(self.pitch, resample=Image.BICUBIC)
+    airplane_view = AirplaneView()
+    clock = pygame.time.Clock()
 
-        return rotated_scene
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                running = False
+            elif event.type == MOUSEMOTION:
+                airplane_view.handle_mouse_event(event)
 
-    def handle_mouse_motion(self, event):
-        # Calculate pitch and roll based on mouse movement
-        center_x = self.width // 2
-        center_y = self.height // 2
+        # Update the view and display
+        screen.fill((255, 255, 255))
+        airplane_image = airplane_view.update_view()
+        screen.blit(airplane_image, (0, 0))
+        pygame.display.flip()
 
-        # Calculate the displacement vector
-        dx = event.x - center_x
-        dy = event.y - center_y
+        clock.tick(30)
 
-        # Calculate the angles based on displacement
-        self.roll = -math.degrees(math.atan2(dy, center_x))
-        self.pitch = -math.degrees(math.atan2(dx, center_y))
-
-    def convert_pil_to_tk(self, pil_image):
-        # Convert a PIL image to Tkinter PhotoImage
-        return tk.PhotoImage(data=pil_image.tobytes())
+    pygame.quit()
+    sys.exit()
 
 if __name__ == "__main__":
-    airplane_view = AirplaneView(600, 400)
+    main()
+

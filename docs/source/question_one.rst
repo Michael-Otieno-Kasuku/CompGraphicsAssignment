@@ -5,6 +5,9 @@ with dimensions 300 pixels by 300 pixels and containing a red primary diagonal l
 left to bottom right) and a green secondary diagonal line (bottom left to top right), then
 fill the lowest bounded quadrant in blue. 10 Marks
 
+PNGWriter Class
+---------------
+
 .. py:class:: PNGWriter
 
    PNGWriter class for creating and manipulating PNG images using PIL (Pillow).

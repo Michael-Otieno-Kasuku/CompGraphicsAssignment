@@ -5,6 +5,9 @@ that, when the cube is loaded, can update the locations of the cube vertices by 
 them with a new value of t, the amount to rotate. To make the animation look smooth, try
 changing t by .05 radians per button click.
 
+RotatingCube Class
+------------------
+
 .. py:class:: RotatingCube
 
    A class for displaying a rotating cube using Tkinter.

@@ -1,182 +1,142 @@
-"""
-Circuit-layout programs are variants of paint programs. Consider the design of logical
-circuits using the Boolean and, or, and not functions. Each of these functions is provided
-by one of the three types of integrated circuits (gates),the symbols for which are shown in
-Figure below.Using PIL for Python , PyQT5 and docstrings Write a program that allows the user to design a logical circuit by selecting
-gates from a menu and positioning them on the screen. Consider methods for connecting
-the outputs of one gate to the inputs of others.
-"""
-
 import sys
-from PyQt5.QtWidgets import QApplication, QGraphicsScene, QGraphicsView, QGraphicsItem, QGraphicsLineItem, QGraphicsRectItem, QGraphicsTextItem, QMenu, QGraphicsSceneContextMenuEvent, QGraphicsSceneMouseEvent
-from PyQt5.QtGui import QPainter, QPixmap, QTransform
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QGraphicsView, QGraphicsScene, QGraphicsItem, QGraphicsEllipseItem, QGraphicsLineItem, QGraphicsTextItem, QVBoxLayout, QWidget, QPushButton, QMenu, QGraphicsSceneContextMenuEvent
+from PyQt5.QtGui import QPixmap, QPainter, QBrush, QColor, QPainterPath, QFont
+from PyQt5.QtCore import Qt, QRectF
 
-class Gate(QGraphicsRectItem):
-    """
-    Represents a logical gate in the circuit.
-
-    Attributes:
-    - gate_type (str): The type of the gate (AND, OR, NOT).
-    - outputs (list): List of gates connected to the output of this gate.
-    """
-
+class Gate(QGraphicsItem):
     def __init__(self, gate_type, x, y):
-        """
-        Initialize the Gate object.
-
-        Parameters:
-        - gate_type (str): The type of the gate (AND, OR, NOT).
-        - x (int): X-coordinate for the initial position.
-        - y (int): Y-coordinate for the initial position.
-        """
-        super().__init__(x, y, 50, 50)
+        super(Gate, self).__init__()
         self.gate_type = gate_type
+        self.width = 60
+        self.height = 60
+        self.inputs = []
+        self.outputs = []
+        self.setPos(x, y)
         self.setFlag(QGraphicsItem.ItemIsMovable)
         self.setFlag(QGraphicsItem.ItemIsSelectable)
         self.setAcceptHoverEvents(True)
-        self.outputs = []
 
-    def contextMenuEvent(self, event: QGraphicsSceneContextMenuEvent):
-        """
-        Handle the context menu event for the gate.
+    def boundingRect(self):
+        return QRectF(0, 0, self.width, self.height)
 
-        Parameters:
-        - event (QGraphicsSceneContextMenuEvent): The context menu event.
-        """
+    def paint(self, painter, option, widget):
+        painter.setRenderHint(QPainter.Antialiasing)
+        painter.setBrush(QBrush(Qt.darkGray))
+        painter.drawRoundedRect(self.boundingRect(), 10, 10)
+
+        font = QFont()
+        font.setPointSize(8)
+        painter.setFont(font)
+
+        text = painter.drawText(self.boundingRect(), Qt.AlignCenter, self.gate_type)
+        self.bounding_rect = text.boundingRect()
+
+    def contextMenuEvent(self, event):
         menu = QMenu()
-        delete_action = menu.addAction("Delete")
-        action = menu.exec_(event.screenPos())
+        add_input_action = menu.addAction("Add Input")
+        add_output_action = menu.addAction("Add Output")
 
-        if action == delete_action:
-            self.scene().removeItem(self)
+        action = menu.exec_(event.scenePos().toPoint())
 
-    def mouseDoubleClickEvent(self, event: QGraphicsSceneMouseEvent):
-        """
-        Handle the double-click event for the gate.
+        if action == add_input_action:
+            self.add_input(event.scenePos().x(), event.scenePos().y())
+        elif action == add_output_action:
+            self.add_output(event.scenePos().x(), event.scenePos().y())
 
-        Parameters:
-        - event (QGraphicsSceneMouseEvent): The double-click event.
-        """
-        # Double-click to toggle gate type
-        if self.gate_type == "AND":
-            self.gate_type = "OR"
-        elif self.gate_type == "OR":
-            self.gate_type = "NOT"
-        else:
-            self.gate_type = "AND"
-        self.update()
+    def hoverEnterEvent(self, event):
+        self.setOpacity(0.7)
 
-    def paint(self, painter: QPainter, option, widget=None):
-        """
-        Custom paint method to draw gate based on type.
+    def hoverLeaveEvent(self, event):
+        self.setOpacity(1.0)
 
-        Parameters:
-        - painter (QPainter): The painter object for drawing.
-        - option: Drawing options.
-        - widget: The widget being painted.
-        """
-        painter.drawRect(self.rect())
-        painter.drawText(self.boundingRect(), Qt.AlignCenter, self.gate_type)
+    def add_input(self, x, y):
+        input_gate = GateInput(self, x, y)
+        self.inputs.append(input_gate.scenePos())
+        self.scene().addItem(input_gate)
+        self.update_connections()
 
-    def add_output(self, output):
-        """
-        Add an output gate to the list of connected gates.
+    def add_output(self, x, y):
+        output_gate = GateOutput(self, x, y)
+        self.outputs.append(output_gate.scenePos())
+        self.scene().addItem(output_gate)
+        self.update_connections()
 
-        Parameters:
-        - output (Gate): The gate connected to the output of this gate.
-        """
-        self.outputs.append(output)
+    def update_connections(self):
+        self.scene().update()
 
-    def get_outputs(self):
-        """
-        Get the list of connected output gates.
+class GateInput(Gate):
+    def __init__(self, parent_gate, x, y):
+        super(GateInput, self).__init__("Input", x, y)
+        self.setParentItem(parent_gate)
 
-        Returns:
-        - list: List of connected output gates.
-        """
-        return self.outputs
+class GateOutput(Gate):
+    def __init__(self, parent_gate, x, y):
+        super(GateOutput, self).__init__("Output", x, y)
+        self.setParentItem(parent_gate)
 
 class Connection(QGraphicsLineItem):
-    """
-    Represents a connection between two gates in the circuit.
+    def __init__(self, start, end):
+        super(Connection, self).__init__()
+        self.start = start
+        self.end = end
+        self.setFlag(QGraphicsItem.ItemIsSelectable)
 
-    Attributes:
-    - start_gate (Gate): The gate from which the connection starts.
-    - end_gate (Gate): The gate to which the connection ends.
-    """
-
-    def __init__(self, start_gate, end_gate):
-        """
-        Initialize the Connection object.
-
-        Parameters:
-        - start_gate (Gate): The gate from which the connection starts.
-        - end_gate (Gate): The gate to which the connection ends.
-        """
-        super().__init__()
-        self.start_gate = start_gate
-        self.end_gate = end_gate
-
-    def paint(self, painter: QPainter, option, widget=None):
-        """
-        Paint the connection line between gates.
-
-        Parameters:
-        - painter (QPainter): The painter object for drawing.
-        - option: Drawing options.
-        - widget: The widget being painted.
-        """
-        painter.drawLine(self.start_gate.scenePos(), self.end_gate.scenePos())
+    def update_path(self):
+        self.setLine(self.start.x(), self.start.y(), self.end.x(), self.end.y())
 
 class CircuitScene(QGraphicsScene):
-    """
-    Represents the overall circuit scene.
-
-    Attributes:
-    - selected_gate (Gate): The currently selected gate for connection.
-    - connection_in_progress (Connection): The connection being created.
-    """
-
     def __init__(self):
-        """
-        Initialize the CircuitScene object.
-        """
-        super().__init__()
-        self.selected_gate = None
-        self.connection_in_progress = None
+        super(CircuitScene, self).__init__()
+        self.connections = []
 
-    def mousePressEvent(self, event: QGraphicsSceneMouseEvent):
-        """
-        Handle the mouse press event in the circuit scene.
+    def contextMenuEvent(self, event: QGraphicsSceneContextMenuEvent):
+        menu = QMenu()
+        add_and_gate_action = menu.addAction("Add AND Gate")
+        add_or_gate_action = menu.addAction("Add OR Gate")
+        add_not_gate_action = menu.addAction("Add NOT Gate")
 
-        Parameters:
-        - event (QGraphicsSceneMouseEvent): The mouse press event.
-        """
-        item = self.itemAt(event.scenePos(), QTransform())
-        if isinstance(item, Gate):
-            self.selected_gate = item
-            self.connection_in_progress = Connection(self.selected_gate, None)
-            self.addItem(self.connection_in_progress)
+        action = menu.exec_(event.scenePos().toPoint())
 
-    def mouseReleaseEvent(self, event: QGraphicsSceneMouseEvent):
-        """
-        Handle the mouse release event in the circuit scene.
+        if action == add_and_gate_action:
+            self.add_gate("AND", event.scenePos().x(), event.scenePos().y())
+        elif action == add_or_gate_action:
+            self.add_gate("OR", event.scenePos().x(), event.scenePos().y())
+        elif action == add_not_gate_action:
+            self.add_gate("NOT", event.scenePos().x(), event.scenePos().y())
 
-        Parameters:
-        - event (QGraphicsSceneMouseEvent): The mouse release event.
-        """
-        item = self.itemAt(event.scenePos(), QTransform())
-        if isinstance(item, Gate) and item != self.selected_gate:
-            self.selected_gate.add_output(item)
-            item.add_input(self.connection_in_progress)
-        self.removeItem(self.connection_in_progress)
-        self.selected_gate = None
-        self.connection_in_progress = None
+    def add_gate(self, gate_type, x, y):
+        gate = Gate(gate_type, x, y)
+        self.addItem(gate)
+
+    def mousePressEvent(self, event):
+        selected_items = self.selectedItems()
+
+        if len(selected_items) == 2 and isinstance(selected_items[0], GateOutput) and isinstance(selected_items[1], GateInput):
+            connection = Connection(selected_items[0].scenePos(), selected_items[1].scenePos())
+            self.addItem(connection)
+            self.connections.append(connection)
+
+        super(CircuitScene, self).mousePressEvent(event)
+
+class CircuitDesigner(QWidget):
+    def __init__(self):
+        super(CircuitDesigner, self).__init__()
+
+        self.initUI()
+
+    def initUI(self):
+        self.setGeometry(100, 100, 800, 600)
+        self.setWindowTitle('Advanced Logical Circuit Designer')
+
+        self.view = QGraphicsView(self)
+        self.view.setScene(CircuitScene())
+
+        layout = QVBoxLayout(self)
+        layout.addWidget(self.view)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    scene = CircuitScene()
-    view = QGraphicsView(scene)
-    view.show()
+    designer = CircuitDesigner()
+    designer.show()
     sys.exit(app.exec_())
+

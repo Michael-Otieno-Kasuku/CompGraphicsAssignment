@@ -9,6 +9,9 @@ correctly, add the averaging step to form a smoother surface.
 
 2. Application Example (1 mark): One application where curves can be used as a reference is in computer-aided design (CAD). In CAD systems, Bézier curves and B-spline curves are often employed to model and represent shapes of objects. Designers can control the shape of curves by adjusting control points, allowing for precise and smooth curve manipulation. This is crucial in designing anything from automotive parts to consumer products.
 
+MeshSubdivision Class
+---------------------
+
 .. py:class:: MeshSubdivision
 
    The MeshSubdivision class provides functionality for generating, subdividing, and visualizing triangular meshes using the Python Imaging Library (PIL).

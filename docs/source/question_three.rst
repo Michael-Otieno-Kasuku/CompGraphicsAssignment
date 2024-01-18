@@ -4,6 +4,9 @@ Using the concept of a Current Transformation Matrix (push/pop matrices), write 
 OpenGL or using whichever language code to define the object as illustrated below. Youmay assume that the object is composed of two squares and a circle of unit dimensions in
 2D space.
 
+ObjectWithShapes Class
+----------------------
+
 .. py:class:: ObjectWithShapes
 
    A class representing an object composed of squares and a circle in a 2D space.

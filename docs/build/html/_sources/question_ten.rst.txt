@@ -5,6 +5,9 @@ physics in the model. Simulate a bouncing ball in two dimensions incorporating b
 gravity and elastic collisions with a surface. You can model the ball with a closed
 polygon that has a sufficient number of sides to look smooth.
 
+BouncingBallSimulation Class
+----------------------------
+
 .. py:class:: BouncingBallSimulation
 
    A class for simulating the motion of a bouncing ball using Pygame.

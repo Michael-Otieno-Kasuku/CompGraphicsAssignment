@@ -4,6 +4,9 @@ Using the PNGWriter class, write a program which takes an existing image called
 image.png and creates a second image called flipped.png as shown below, where
 flipped.png is the result of flipping image.png both horizontally and vertically.
 
+ImageFlipper Class
+------------------
+
 .. py:class:: ImageFlipper
 
    A class for flipping an image both horizontally and vertically.

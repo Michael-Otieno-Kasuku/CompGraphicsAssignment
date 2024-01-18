@@ -61,11 +61,51 @@
 <li class="toctree-l1"><a class="reference internal" href="question_thirteen.html">Question Thirteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fourteen.html">Question Fourteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fifteen.html">Question Fifteen</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Sixteen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Sixteen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sierpinskigasket-class">SierpinskiGasket Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#SierpinskiGasket"><code class="docutils literal notranslate"><span class="pre">SierpinskiGasket</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#SierpinskiGasket.__init__"><code class="docutils literal notranslate"><span class="pre">SierpinskiGasket.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#SierpinskiGasket.draw_triangle"><code class="docutils literal notranslate"><span class="pre">SierpinskiGasket.draw_triangle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#SierpinskiGasket.generate"><code class="docutils literal notranslate"><span class="pre">SierpinskiGasket.generate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#SierpinskiGasket.show"><code class="docutils literal notranslate"><span class="pre">SierpinskiGasket.show()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#SierpinskiGasket.save"><code class="docutils literal notranslate"><span class="pre">SierpinskiGasket.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="question_seventeen.html">Question Seventeen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentythree.html">Question Twenty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyseven.html">Question Twenty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyeight.html">Question Twenty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentynine.html">Question Twenty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirty.html">Question Thirty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyone.html">Question Thirty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtytwo.html">Question Thirty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtythree.html">Question Thirty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfour.html">Question Thirty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfive.html">Question Thirty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtysix.html">Question Thirty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyseven.html">Question Thirty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyeight.html">Question Thirty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtynine.html">Question Thirty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourty.html">Question Fourty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyone.html">Question Fourty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtytwo.html">Question Fourty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtythree.html">Question Fourty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfour.html">Question Fourty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfive.html">Question Fourty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtysix.html">Question Fourty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyseven.html">Question Fourty Seven</a></li>
 </ul>
 
         </div>
@@ -94,6 +134,98 @@
              
   <section id="question-sixteen">
 <h1>Question Sixteen<a class="headerlink" href="#question-sixteen" title="Link to this heading"></a></h1>
+<p>Write a program to generate a Sierpinski gasket as follows. Start with a white triangle. At
+each step, use transformations to generate three similar triangles that are drawn over the
+original triangle, leaving the center of the triangle white and the three corners black.</p>
+<section id="sierpinskigasket-class">
+<h2>SierpinskiGasket Class<a class="headerlink" href="#sierpinskigasket-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="SierpinskiGasket">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SierpinskiGasket</span></span><a class="headerlink" href="#SierpinskiGasket" title="Link to this definition"></a></dt>
+<dd><p>A class for generating and displaying the Sierpinski Gasket image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Size of the output image.</p></li>
+<li><p><strong>depth</strong> (<em>int</em>) – Recursion depth.</p></li>
+<li><p><strong>image</strong> (<em>PIL.Image</em>) – Image object for storing the generated image.</p></li>
+<li><p><strong>draw</strong> (<em>PIL.ImageDraw</em>) – Draw object for drawing on the image.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="SierpinskiGasket.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SierpinskiGasket.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the SierpinskiGasket object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Size of the output image.</p></li>
+<li><p><strong>depth</strong> (<em>int</em>) – Recursion depth.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SierpinskiGasket.draw_triangle">
+<span class="sig-name descname"><span class="pre">draw_triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SierpinskiGasket.draw_triangle" title="Link to this definition"></a></dt>
+<dd><p>Draw a Sierpinski triangle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<em>tuple</em>) – Coordinates of the first vertex.</p></li>
+<li><p><strong>p2</strong> (<em>tuple</em>) – Coordinates of the second vertex.</p></li>
+<li><p><strong>p3</strong> (<em>tuple</em>) – Coordinates of the third vertex.</p></li>
+<li><p><strong>depth</strong> (<em>int</em>) – Recursion depth.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SierpinskiGasket.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SierpinskiGasket.generate" title="Link to this definition"></a></dt>
+<dd><p>Generate the Sierpinski Gasket image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SierpinskiGasket.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SierpinskiGasket.show" title="Link to this definition"></a></dt>
+<dd><p>Display the generated image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SierpinskiGasket.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SierpinskiGasket.save" title="Link to this definition"></a></dt>
+<dd><p>Save the generated image to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Name of the file to save the image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Set the size and depth parameters</span>
+    <span class="n">image_size</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">recursion_depth</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="c1"># Create a SierpinskiGasket object</span>
+    <span class="n">sierpinski_gasket</span> <span class="o">=</span> <span class="n">SierpinskiGasket</span><span class="p">(</span><span class="n">image_size</span><span class="p">,</span> <span class="n">recursion_depth</span><span class="p">)</span>
+
+    <span class="c1"># Generate and display the Sierpinski Gasket</span>
+    <span class="n">sierpinski_gasket</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
+    <span class="n">sierpinski_gasket</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Save the image to a file</span>
+    <span class="n">sierpinski_gasket</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;sierpinski_gasket_oop.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 

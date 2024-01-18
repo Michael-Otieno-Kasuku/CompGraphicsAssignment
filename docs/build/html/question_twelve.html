@@ -57,7 +57,19 @@
 <li class="toctree-l1"><a class="reference internal" href="question_nine.html">Question nine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_ten.html">Question ten</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eleven.html">Question Eleven</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Tweleve</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Tweleve</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plottingapp-class">PlottingApp Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#PlottingApp"><code class="docutils literal notranslate"><span class="pre">PlottingApp</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PlottingApp.__init__"><code class="docutils literal notranslate"><span class="pre">PlottingApp.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PlottingApp.initUI"><code class="docutils literal notranslate"><span class="pre">PlottingApp.initUI()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PlottingApp.update_plot"><code class="docutils literal notranslate"><span class="pre">PlottingApp.update_plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PlottingApp.generate_plot"><code class="docutils literal notranslate"><span class="pre">PlottingApp.generate_plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="question_thirteen.html">Question Thirteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fourteen.html">Question Fourteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fifteen.html">Question Fifteen</a></li>
@@ -66,6 +78,33 @@
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentythree.html">Question Twenty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyseven.html">Question Twenty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyeight.html">Question Twenty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentynine.html">Question Twenty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirty.html">Question Thirty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyone.html">Question Thirty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtytwo.html">Question Thirty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtythree.html">Question Thirty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfour.html">Question Thirty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfive.html">Question Thirty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtysix.html">Question Thirty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyseven.html">Question Thirty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyeight.html">Question Thirty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtynine.html">Question Thirty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourty.html">Question Fourty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyone.html">Question Fourty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtytwo.html">Question Fourty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtythree.html">Question Fourty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfour.html">Question Fourty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfive.html">Question Fourty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtysix.html">Question Fourty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyseven.html">Question Fourty Seven</a></li>
 </ul>
 
         </div>
@@ -94,6 +133,72 @@
              
   <section id="question-tweleve">
 <h1>Question Tweleve<a class="headerlink" href="#question-tweleve" title="Link to this heading"></a></h1>
+<p>Plotting packages offer a variety of methods for displaying data. Write an interactive
+plotting application for two-dimensional curves. Your application should allow the user
+to choose the mode (line strip or polyline display of the data, bar chart, or pie chart),
+colors, and line styles.</p>
+<section id="plottingapp-class">
+<h2>PlottingApp Class<a class="headerlink" href="#plottingapp-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="PlottingApp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PlottingApp</span></span><a class="headerlink" href="#PlottingApp" title="Link to this definition"></a></dt>
+<dd><p>A class representing an interactive plotting application using PyQt5.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PlottingApp.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PlottingApp.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the plotting application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PlottingApp.initUI">
+<span class="sig-name descname"><span class="pre">initUI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PlottingApp.initUI" title="Link to this definition"></a></dt>
+<dd><p>Initialize the user interface.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PlottingApp.update_plot">
+<span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PlottingApp.update_plot" title="Link to this definition"></a></dt>
+<dd><p>Update the plot when the user changes options.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PlottingApp.generate_plot">
+<span class="sig-name descname"><span class="pre">generate_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PlottingApp.generate_plot" title="Link to this definition"></a></dt>
+<dd><p>Generate the plot based on user selections.</p>
+</dd></dl>
+
+<dl class="simple">
+<dt>Constants:</dt><dd><ul class="simple">
+<li><p>width (int): Width of the plot image (600).</p></li>
+<li><p>height (int): Height of the plot image (400).</p></li>
+</ul>
+</dd>
+<dt>User Interface Elements:</dt><dd><ul class="simple">
+<li><p>QLabel image_label: Display the generated plot.</p></li>
+<li><p>QComboBox mode_combobox: Select the plotting mode (Line Strip, Polyline, Bar Chart, Pie Chart).</p></li>
+<li><p>QComboBox color_combobox: Select the plot color (Red, Green, Blue, Black).</p></li>
+<li><p>QComboBox line_style_combobox: Select the line style (Solid, Dashed, Dotted).</p></li>
+<li><p>QPushButton generate_button: Generate the plot based on user selections.</p></li>
+</ul>
+</dd>
+<dt>Example Usage:</dt><dd><ul class="simple">
+<li><p>Create an instance of PlottingApp.</p></li>
+<li><p>Interact with the user interface to select plotting options.</p></li>
+<li><p>Click the “Generate Plot” button to update and display the plot.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">plotting_app</span> <span class="o">=</span> <span class="n">PlottingApp</span><span class="p">()</span>
+    <span class="n">plotting_app</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 

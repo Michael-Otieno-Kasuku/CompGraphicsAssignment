@@ -59,13 +59,55 @@
 <li class="toctree-l1"><a class="reference internal" href="question_eleven.html">Question Eleven</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twelve.html">Question Tweleve</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_thirteen.html">Question Thirteen</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Fourteen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Fourteen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#airplaneview-class">AirplaneView Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#AirplaneView"><code class="docutils literal notranslate"><span class="pre">AirplaneView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#AirplaneView.__init__"><code class="docutils literal notranslate"><span class="pre">AirplaneView.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AirplaneView.update_view"><code class="docutils literal notranslate"><span class="pre">AirplaneView.update_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AirplaneView.draw_airplane"><code class="docutils literal notranslate"><span class="pre">AirplaneView.draw_airplane()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AirplaneView.draw_distant_objects"><code class="docutils literal notranslate"><span class="pre">AirplaneView.draw_distant_objects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AirplaneView.handle_mouse_event"><code class="docutils literal notranslate"><span class="pre">AirplaneView.handle_mouse_event()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AirplaneView.update_angles"><code class="docutils literal notranslate"><span class="pre">AirplaneView.update_angles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="question_fifteen.html">Question Fifteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_sixteen.html">Question Sixteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_seventeen.html">Question Seventeen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentythree.html">Question Twenty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyseven.html">Question Twenty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyeight.html">Question Twenty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentynine.html">Question Twenty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirty.html">Question Thirty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyone.html">Question Thirty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtytwo.html">Question Thirty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtythree.html">Question Thirty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfour.html">Question Thirty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfive.html">Question Thirty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtysix.html">Question Thirty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyseven.html">Question Thirty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyeight.html">Question Thirty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtynine.html">Question Thirty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourty.html">Question Fourty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyone.html">Question Fourty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtytwo.html">Question Fourty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtythree.html">Question Fourty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfour.html">Question Fourty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfive.html">Question Fourty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtysix.html">Question Fourty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyseven.html">Question Fourty Seven</a></li>
 </ul>
 
         </div>
@@ -94,6 +136,121 @@
              
   <section id="question-fourteen">
 <h1>Question Fourteen<a class="headerlink" href="#question-fourteen" title="Link to this heading"></a></h1>
+<p>The orientation of an airplane is described by a coordinate system as shown below. The
+forward–backward motion of the joystick controls the up– down rotation with respect to
+the axis running along the length of the airplane, called the pitch. The right–left motion of
+the joystick controls the rotation about this axis, called the roll. Write a program that uses
+the mouse to control pitch and roll for the view seen by a pilot. You can do this exercise
+in two dimensions by considering a set of objects to be located far from the airplane, then
+having the mouse control the two-dimensional viewing of these objects.</p>
+<section id="airplaneview-class">
+<h2>AirplaneView Class<a class="headerlink" href="#airplaneview-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AirplaneView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AirplaneView</span></span><a class="headerlink" href="#AirplaneView" title="Link to this definition"></a></dt>
+<dd><p>A class for displaying an airplane view using Pygame and PIL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pitch_angle</strong> (<em>float</em>) – Pitch angle of the airplane.</p></li>
+<li><p><strong>roll_angle</strong> (<em>float</em>) – Roll angle of the airplane.</p></li>
+<li><p><strong>mouse_x</strong> (<em>int</em>) – X-coordinate of the mouse position.</p></li>
+<li><p><strong>mouse_y</strong> (<em>int</em>) – Y-coordinate of the mouse position.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="AirplaneView.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AirplaneView.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the AirplaneView object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AirplaneView.update_view">
+<span class="sig-name descname"><span class="pre">update_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AirplaneView.update_view" title="Link to this definition"></a></dt>
+<dd><p>Update the view of the airplane based on pitch and roll angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pygame surface representing the updated view.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AirplaneView.draw_airplane">
+<span class="sig-name descname"><span class="pre">draw_airplane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">draw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AirplaneView.draw_airplane" title="Link to this definition"></a></dt>
+<dd><p>Draw the airplane on the PIL ImageDraw object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>draw</strong> – PIL ImageDraw object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AirplaneView.draw_distant_objects">
+<span class="sig-name descname"><span class="pre">draw_distant_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">draw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AirplaneView.draw_distant_objects" title="Link to this definition"></a></dt>
+<dd><p>Draw distant objects on the PIL ImageDraw object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>draw</strong> – PIL ImageDraw object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AirplaneView.handle_mouse_event">
+<span class="sig-name descname"><span class="pre">handle_mouse_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AirplaneView.handle_mouse_event" title="Link to this definition"></a></dt>
+<dd><p>Handle mouse events to update mouse coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Pygame mouse event.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AirplaneView.update_angles">
+<span class="sig-name descname"><span class="pre">update_angles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AirplaneView.update_angles" title="Link to this definition"></a></dt>
+<dd><p>Update pitch and roll angles based on mouse position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main" title="Link to this definition"></a></dt>
+<dd><p>Main function to demonstrate the AirplaneView class.</p>
+<dl class="simple">
+<dt>Constants:</dt><dd><ul class="simple">
+<li><p>SCREEN_WIDTH (int): Width of the Pygame window (800).</p></li>
+<li><p>SCREEN_HEIGHT (int): Height of the Pygame window (600).</p></li>
+<li><p>AIRPLANE_WIDTH (int): Width of the airplane representation (100).</p></li>
+<li><p>AIRPLANE_HEIGHT (int): Height of the airplane representation (150).</p></li>
+<li><p>AIRPLANE_COLOR (tuple): RGB color tuple for the airplane (255, 0, 0).</p></li>
+<li><p>OBJECTS_COLOR (tuple): RGB color tuple for distant objects (0, 0, 255).</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>Create an instance of AirplaneView.</p></li>
+<li><p>Move the mouse to control the pitch and roll angles.</p></li>
+<li><p>Observe the updated view of the airplane.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 

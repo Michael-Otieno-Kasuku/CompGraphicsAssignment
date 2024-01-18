@@ -1,10 +1,3 @@
-"""
-Using PIL for Python, Pygame and docstrings:
-Write a program that allows a user to play a simple version of solitaire. First, design a
-simple set of cards using only our basic primitives. Your program can be written in terms
-of picking rectangular objects.
-"""
-
 import pygame
 from PIL import Image, ImageDraw
 import os

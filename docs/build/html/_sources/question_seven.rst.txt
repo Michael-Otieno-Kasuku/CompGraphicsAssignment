@@ -6,6 +6,9 @@ perimeter. A simple example is shown in Figure below. Write a program using WebG
 or OPENGL or JAVA or any other programming language of your choice and
 understanding that takes as input the two integers N and M and then draws an N × M maze.
 
+MazeGenerator Class
+-------------------
+
 .. py:class:: MazeGenerator
 
    The MazeGenerator class provides functionality for generating and visualizing mazes using a randomized Prim's algorithm.

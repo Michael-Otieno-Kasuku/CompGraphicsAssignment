@@ -1,145 +1,175 @@
-"""
-Using PIL for Python and docstrings and OOP:
-
-20. Write a library of functions that will allow you to do geometric programming. Your
-library should contain functions for manipulating the basic geometric types (points, lines,
-vectors) and operations on those types, including dot and cross products. It should allow
-you to change frames. You can also create functions to interface with PyQT5 so that you
-can display the results of geometric calculations.
-"""
-
-from PyQt5.QtWidgets import QGraphicsScene, QGraphicsView, QGraphicsItem, QApplication
-from PyQt5.QtCore import Qt, QPointF, QRectF
-from PyQt5.QtGui import QPainter, QPen
+from PyQt5.QtWidgets import QApplication, QGraphicsScene, QGraphicsView, QGraphicsEllipseItem, QGraphicsLineItem, QGraphicsPolygonItem, QVBoxLayout, QHBoxLayout, QWidget, QPushButton, QLabel, QSlider
+from PyQt5.QtGui import QPainter, QPolygonF
+from PyQt5.QtCore import Qt, QPointF
 import sys
+import webbrowser
+import numpy as np
+
+class GeometricLibrary:
+    def __init__(self):
+        self.current_frame = np.identity(3)
+
+    def translate(self, dx, dy):
+        translation_matrix = np.array([
+            [1, 0, dx],
+            [0, 1, dy],
+            [0, 0, 1]
+        ])
+        self.current_frame = np.dot(translation_matrix, self.current_frame)
+
+    def rotate(self, angle):
+        angle_rad = np.radians(angle)
+        rotation_matrix = np.array([
+            [np.cos(angle_rad), -np.sin(angle_rad), 0],
+            [np.sin(angle_rad), np.cos(angle_rad), 0],
+            [0, 0, 1]
+        ])
+        self.current_frame = np.dot(rotation_matrix, self.current_frame)
+
+    def scale(self, sx, sy):
+        scale_matrix = np.array([
+            [sx, 0, 0],
+            [0, sy, 0],
+            [0, 0, 1]
+        ])
+        self.current_frame = np.dot(scale_matrix, self.current_frame)
+
+    def transform_point(self, point):
+        homogeneous_point = np.array([point[0], point[1], 1])
+        transformed_point = np.dot(self.current_frame, homogeneous_point)
+        return transformed_point[:2]
+
+class Canvas(QWidget):
+    def __init__(self, library):
+        super().__init__()
+        self.library = library
+        self.point = [100, 100]
+        self.initUI()
+
+    def initUI(self):
+        self.setMinimumSize(400, 400)
+        self.setGeometry(100, 100, 400, 400)
+
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        transformed_point = self.library.transform_point(self.point)
+    
+        # Convert coordinates to integers for drawing
+        x, y = int(transformed_point[0]), int(transformed_point[1])
+
+        # Draw transformed point
+        painter.drawEllipse(x, y, 10, 10)
+
+        # Draw transformed line
+        painter.drawLine(50, 50, x, y)
+
+        # Draw transformed polygon
+        polygon = QPolygonF([QPointF(200, 200), QPointF(300, 200), QPointF(x, y)])
+        painter.drawPolygon(polygon)
 
 
-class Point:
-    def __init__(self, x, y):
-        """
-        Represents a point in 2D space.
+class WebGLViewer(QWidget):
+    def __init__(self, vertex_shader, fragment_shader):
+        super().__init__()
+        self.setup_ui()
+        self.create_webgl_page(vertex_shader, fragment_shader)
 
-        Parameters:
-        - x (float): x-coordinate.
-        - y (float): y-coordinate.
-        """
-        self.x = x
-        self.y = y
+    def setup_ui(self):
+        layout = QVBoxLayout(self)
+        self.webgl_button = QPushButton("Open WebGL Viewer", self)
+        self.webgl_button.clicked.connect(self.open_webgl_viewer)
+        layout.addWidget(self.webgl_button)
+        self.webgl_url_label = QLabel("", self)
+        layout.addWidget(self.webgl_url_label)
+        self.setLayout(layout)
 
-    def __str__(self):
-        return f"Point({self.x}, {self.y})"
+    def open_webgl_viewer(self):
+        webbrowser.open("webgl_display.html")
 
+    def create_webgl_page(self, vertex_shader, fragment_shader):
+        with open('webgl_display.html', 'w') as f:
+            f.write(f'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Display</title>
+    <script src="https://unpkg.com/gl-matrix@2.4.0/dist/gl-matrix.js"></script>
+    <script type="x-shader/x-vertex" id="vertex-shader">
+        {vertex_shader}
+    </script>
+    <script type="x-shader/x-fragment" id="fragment-shader">
+        {fragment_shader}
+    </script>
+</head>
+<body>
+    <canvas id="webgl-canvas" width="500" height="500"></canvas>
+    <script src="your_webgl_script.js"></script>
+</body>
+</html>
+''')
+        self.webgl_url_label.setText("WebGL Viewer URL: webgl_display.html")
 
-class Vector:
-    def __init__(self, x, y):
-        """
-        Represents a 2D vector.
-
-        Parameters:
-        - x (float): x-component.
-        - y (float): y-component.
-        """
-        self.x = x
-        self.y = y
-
-    def __str__(self):
-        return f"Vector({self.x}, {self.y})"
-
-
-class Line:
-    def __init__(self, point1, point2):
-        """
-        Represents a line segment connecting two points.
-
-        Parameters:
-        - point1 (Point): Starting point.
-        - point2 (Point): Ending point.
-        """
-        self.point1 = point1
-        self.point2 = point2
-
-    def __str__(self):
-        return f"Line({self.point1}, {self.point2})"
-
-
-class GeometricOperations:
-    @staticmethod
-    def dot_product(vector1, vector2):
-        """
-        Calculate the dot product of two vectors.
-
-        Parameters:
-        - vector1 (Vector): First vector.
-        - vector2 (Vector): Second vector.
-
-        Returns:
-        - float: Dot product.
-        """
-        return vector1.x * vector2.x + vector1.y * vector2.y
-
-    @staticmethod
-    def cross_product(vector1, vector2):
-        """
-        Calculate the cross product of two vectors.
-
-        Parameters:
-        - vector1 (Vector): First vector.
-        - vector2 (Vector): Second vector.
-
-        Returns:
-        - float: Cross product.
-        """
-        return vector1.x * vector2.y - vector1.y * vector2.x
-
-
-class GeometricDisplay:
-    @staticmethod
-    def display_point(scene, point, color=Qt.black):
-        """
-        Display a point on the PyQt5 graphics scene.
-
-        Parameters:
-        - scene (QGraphicsScene): Graphics scene.
-        - point (Point): Point to be displayed.
-        - color (Qt.Color): Color of the point.
-        """
-        graphics_point = QPointF(point.x, point.y)
-        scene.addEllipse(graphics_point, 2, 2, QPen(color), Qt.NoBrush)
-
-    @staticmethod
-    def display_line(scene, line, color=Qt.black):
-        """
-        Display a line on the PyQt5 graphics scene.
-
-        Parameters:
-        - scene (QGraphicsScene): Graphics scene.
-        - line (Line): Line to be displayed.
-        - color (Qt.Color): Color of the line.
-        """
-        graphics_line = QGraphicsItem()
-        graphics_line.setLine(line.point1.x, line.point1.y, line.point2.x, line.point2.y)
-        scene.addItem(graphics_line)
-
-
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-    scene = QGraphicsScene()
 
-    # Example usage
-    point_a = Point(0, 0)
-    point_b = Point(5, 5)
-    vector_ab = Vector(point_b.x - point_a.x, point_b.y - point_a.y)
+    library = GeometricLibrary()
 
-    GeometricDisplay.display_point(scene, point_a, Qt.red)
-    GeometricDisplay.display_point(scene, point_b, Qt.blue)
-    GeometricDisplay.display_line(scene, Line(point_a, point_b), Qt.black)
+    # PyQt5 Window
+    main_window = QWidget()
+    main_layout = QVBoxLayout(main_window)
 
-    dot_product_result = GeometricOperations.dot_product(vector_ab, Vector(1, 1))
-    cross_product_result = GeometricOperations.cross_product(vector_ab, Vector(1, -1))
+    canvas = Canvas(library)
+    main_layout.addWidget(canvas)
 
-    print(f"Dot Product: {dot_product_result}")
-    print(f"Cross Product: {cross_product_result}")
+    control_layout = QHBoxLayout()
+    control_layout.setAlignment(Qt.AlignTop)
 
-    view = QGraphicsView(scene)
-    view.show()
+    # Add sliders for translation, rotation, and scaling
+    translation_slider = QSlider(Qt.Horizontal)
+    rotation_slider = QSlider(Qt.Horizontal)
+    scaling_slider = QSlider(Qt.Horizontal)
+
+    translation_slider.valueChanged.connect(lambda value: handle_slider_change(value, 'translation', library, canvas))
+    rotation_slider.valueChanged.connect(lambda value: handle_slider_change(value, 'rotation', library, canvas))
+    scaling_slider.valueChanged.connect(lambda value: handle_slider_change(value, 'scaling', library, canvas))
+
+    control_layout.addWidget(create_slider_group(translation_slider, "Translation", -100, 100))
+    control_layout.addWidget(create_slider_group(rotation_slider, "Rotation", 0, 360))
+    control_layout.addWidget(create_slider_group(scaling_slider, "Scaling", 1, 3))
+
+    main_layout.addLayout(control_layout)
+
+    # WebGL Viewer
+    webgl_viewer = WebGLViewer('vertex_shader_code_here', 'fragment_shader_code_here')
+    main_layout.addWidget(webgl_viewer)
+
+    main_window.setLayout(main_layout)
+    main_window.show()
+
     sys.exit(app.exec_())
+
+def create_slider_group(slider, label_text, min_value, max_value):
+    group_box = QWidget()
+    layout = QVBoxLayout(group_box)
+    label = QLabel(label_text)
+    label.setAlignment(Qt.AlignCenter)
+    slider.setRange(min_value, max_value)
+    layout.addWidget(label)
+    layout.addWidget(slider)
+    return group_box
+
+def handle_slider_change(value, transformation_type, library, canvas):
+    if transformation_type == 'translation':
+        library.translate(value, value)
+    elif transformation_type == 'rotation':
+        library.rotate(value)
+    elif transformation_type == 'scaling':
+        library.scale(value / 100.0, value / 100.0)
+
+    canvas.update()
+
+if __name__ == "__main__":
+    main()
+

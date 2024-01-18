@@ -1,10 +1,3 @@
-"""
-Using PIL for Python and docstrings and OOP:
-Write a program to generate the locations of pixels along a rasterized line segment using
-Bresenham’s algorithm. Check that your program works for all slopes and all possible
-locations of the endpoints. What is the initial value of the decision variable?
-"""
-
 from PIL import Image
 
 class BresenhamLine:

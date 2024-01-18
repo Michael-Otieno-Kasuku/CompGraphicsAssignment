@@ -11,6 +11,9 @@ parallel stripes. You should make sure that you’re not fooling yourself by hav
 display (after the press/click of a button) show either vertical or horizontal stripes next tothe gray rectangle (at random) and have the position of the stripes and the solid rectangle
 exchanged or not (at random).
 
+GrayAdjustmentApp Class
+-----------------------
+
 .. py:class:: GrayAdjustmentApp
 
    A professional application for adjusting the gray level of a gray rectangle

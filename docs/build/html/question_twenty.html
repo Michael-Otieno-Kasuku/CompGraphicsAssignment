@@ -21,6 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Question Twenty One" href="question_twentyone.html" />
     <link rel="prev" title="Question Nineteen" href="question_nineteen.html" /> 
 </head>
 
@@ -64,7 +65,70 @@
 <li class="toctree-l1"><a class="reference internal" href="question_seventeen.html">Question Seventeen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Twenty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_nineteen.html#webgl-paint-program">WebGL Paint Program</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Twenty</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#geometriclibrary-class">GeometricLibrary Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#GeometricLibrary"><code class="docutils literal notranslate"><span class="pre">GeometricLibrary</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GeometricLibrary.__init__"><code class="docutils literal notranslate"><span class="pre">GeometricLibrary.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GeometricLibrary.translate"><code class="docutils literal notranslate"><span class="pre">GeometricLibrary.translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GeometricLibrary.rotate"><code class="docutils literal notranslate"><span class="pre">GeometricLibrary.rotate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GeometricLibrary.scale"><code class="docutils literal notranslate"><span class="pre">GeometricLibrary.scale()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GeometricLibrary.transform_point"><code class="docutils literal notranslate"><span class="pre">GeometricLibrary.transform_point()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas-class">Canvas Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Canvas"><code class="docutils literal notranslate"><span class="pre">Canvas</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Canvas.__init__"><code class="docutils literal notranslate"><span class="pre">Canvas.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Canvas.initUI"><code class="docutils literal notranslate"><span class="pre">Canvas.initUI()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Canvas.paintEvent"><code class="docutils literal notranslate"><span class="pre">Canvas.paintEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Canvas.create_slider_group"><code class="docutils literal notranslate"><span class="pre">Canvas.create_slider_group()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Canvas.handle_slider_change"><code class="docutils literal notranslate"><span class="pre">Canvas.handle_slider_change()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#webglviewer-class">WebGLViewer Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#WebGLViewer"><code class="docutils literal notranslate"><span class="pre">WebGLViewer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WebGLViewer.__init__"><code class="docutils literal notranslate"><span class="pre">WebGLViewer.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebGLViewer.setup_ui"><code class="docutils literal notranslate"><span class="pre">WebGLViewer.setup_ui()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebGLViewer.open_webgl_viewer"><code class="docutils literal notranslate"><span class="pre">WebGLViewer.open_webgl_viewer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebGLViewer.create_webgl_page"><code class="docutils literal notranslate"><span class="pre">WebGLViewer.create_webgl_page()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebGLViewer.main"><code class="docutils literal notranslate"><span class="pre">WebGLViewer.main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentythree.html">Question Twenty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyseven.html">Question Twenty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyeight.html">Question Twenty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentynine.html">Question Twenty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirty.html">Question Thirty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyone.html">Question Thirty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtytwo.html">Question Thirty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtythree.html">Question Thirty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfour.html">Question Thirty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfive.html">Question Thirty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtysix.html">Question Thirty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyseven.html">Question Thirty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyeight.html">Question Thirty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtynine.html">Question Thirty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourty.html">Question Fourty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyone.html">Question Fourty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtytwo.html">Question Fourty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtythree.html">Question Fourty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfour.html">Question Fourty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfive.html">Question Fourty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtysix.html">Question Fourty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyseven.html">Question Fourty Seven</a></li>
 </ul>
 
         </div>
@@ -93,6 +157,225 @@
              
   <section id="question-twenty">
 <h1>Question Twenty<a class="headerlink" href="#question-twenty" title="Link to this heading"></a></h1>
+<p>Write a library of functions that will allow you to do geometric programming. Your
+library should contain functions for manipulating the basic geometric types (points, lines,
+vectors) and operations on those types, including dot and cross products. It should allow
+you to change frames. You can also create functions to interface with WebGL so that you
+can display the results of geometric calculations.</p>
+<section id="geometriclibrary-class">
+<h2>GeometricLibrary Class<a class="headerlink" href="#geometriclibrary-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GeometricLibrary">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GeometricLibrary</span></span><a class="headerlink" href="#GeometricLibrary" title="Link to this definition"></a></dt>
+<dd><p>A class for handling geometric transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_frame</strong> (<em>np.ndarray</em>) – Current transformation matrix.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="GeometricLibrary.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GeometricLibrary.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the GeometricLibrary object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GeometricLibrary.translate">
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GeometricLibrary.translate" title="Link to this definition"></a></dt>
+<dd><p>Translate the current frame by the given delta values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> (<em>float</em>) – Delta value for x-axis translation.</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – Delta value for y-axis translation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GeometricLibrary.rotate">
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GeometricLibrary.rotate" title="Link to this definition"></a></dt>
+<dd><p>Rotate the current frame by the given angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>angle</strong> (<em>float</em>) – Rotation angle in degrees.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GeometricLibrary.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GeometricLibrary.scale" title="Link to this definition"></a></dt>
+<dd><p>Scale the current frame by the given factors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sx</strong> (<em>float</em>) – Scaling factor for x-axis.</p></li>
+<li><p><strong>sy</strong> (<em>float</em>) – Scaling factor for y-axis.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GeometricLibrary.transform_point">
+<span class="sig-name descname"><span class="pre">transform_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GeometricLibrary.transform_point" title="Link to this definition"></a></dt>
+<dd><p>Transform a 2D point using the current frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>point</strong> (<em>list</em>) – 2D point [x, y].</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Transformed point [x’, y’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="canvas-class">
+<h2>Canvas Class<a class="headerlink" href="#canvas-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Canvas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Canvas</span></span><a class="headerlink" href="#Canvas" title="Link to this definition"></a></dt>
+<dd><p>A class for creating an interactive canvas for geometric visualization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>library</strong> (<a class="reference internal" href="#GeometricLibrary" title="GeometricLibrary"><em>GeometricLibrary</em></a>) – Instance of GeometricLibrary for transformations.</p></li>
+<li><p><strong>point</strong> (<em>list</em>) – 2D point for visualization.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Canvas.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">library</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Canvas.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the Canvas object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>library</strong> (<a class="reference internal" href="#GeometricLibrary" title="GeometricLibrary"><em>GeometricLibrary</em></a>) – Instance of GeometricLibrary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Canvas.initUI">
+<span class="sig-name descname"><span class="pre">initUI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Canvas.initUI" title="Link to this definition"></a></dt>
+<dd><p>Initialize the canvas UI.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Canvas.paintEvent">
+<span class="sig-name descname"><span class="pre">paintEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Canvas.paintEvent" title="Link to this definition"></a></dt>
+<dd><p>Paint event handler for drawing on the canvas.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Canvas.create_slider_group">
+<span class="sig-name descname"><span class="pre">create_slider_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Canvas.create_slider_group" title="Link to this definition"></a></dt>
+<dd><p>Create a slider group for controlling geometric transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slider</strong> (<em>QSlider</em>) – Slider widget.</p></li>
+<li><p><strong>label_text</strong> (<em>str</em>) – Text for the slider label.</p></li>
+<li><p><strong>min_value</strong> (<em>int</em>) – Minimum value for the slider.</p></li>
+<li><p><strong>max_value</strong> (<em>int</em>) – Maximum value for the slider.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget representing the slider group.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Canvas.handle_slider_change">
+<span class="sig-name descname"><span class="pre">handle_slider_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformation_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Canvas.handle_slider_change" title="Link to this definition"></a></dt>
+<dd><p>Handle slider value changes and update the canvas accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>int</em>) – Slider value.</p></li>
+<li><p><strong>transformation_type</strong> (<em>str</em>) – Type of geometric transformation (translation, rotation, scaling).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="webglviewer-class">
+<h2>WebGLViewer Class<a class="headerlink" href="#webglviewer-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WebGLViewer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WebGLViewer</span></span><a class="headerlink" href="#WebGLViewer" title="Link to this definition"></a></dt>
+<dd><p>A class for creating a simple PyQt5 window with a button to open a WebGL viewer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>webgl_button</strong> (<em>QPushButton</em>) – Button to open the WebGL viewer.</p></li>
+<li><p><strong>webgl_url_label</strong> (<em>QLabel</em>) – Label displaying the URL of the WebGL viewer.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="WebGLViewer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_shader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fragment_shader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WebGLViewer.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the WebGLViewer object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_shader</strong> (<em>str</em>) – Vertex shader code.</p></li>
+<li><p><strong>fragment_shader</strong> (<em>str</em>) – Fragment shader code.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WebGLViewer.setup_ui">
+<span class="sig-name descname"><span class="pre">setup_ui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WebGLViewer.setup_ui" title="Link to this definition"></a></dt>
+<dd><p>Set up the UI components.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WebGLViewer.open_webgl_viewer">
+<span class="sig-name descname"><span class="pre">open_webgl_viewer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WebGLViewer.open_webgl_viewer" title="Link to this definition"></a></dt>
+<dd><p>Open the WebGL viewer in the default web browser.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WebGLViewer.create_webgl_page">
+<span class="sig-name descname"><span class="pre">create_webgl_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_shader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fragment_shader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WebGLViewer.create_webgl_page" title="Link to this definition"></a></dt>
+<dd><p>Create the HTML page for the WebGL viewer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_shader</strong> (<em>str</em>) – Vertex shader code.</p></li>
+<li><p><strong>fragment_shader</strong> (<em>str</em>) – Fragment shader code.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WebGLViewer.main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WebGLViewer.main" title="Link to this definition"></a></dt>
+<dd><p>Main function to demonstrate the WebGLViewer class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -100,6 +383,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="question_nineteen.html" class="btn btn-neutral float-left" title="Question Nineteen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="question_twentyone.html" class="btn btn-neutral float-right" title="Question Twenty One" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

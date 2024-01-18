@@ -62,10 +62,50 @@
 <li class="toctree-l1"><a class="reference internal" href="question_fourteen.html">Question Fourteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fifteen.html">Question Fifteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_sixteen.html">Question Sixteen</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Seventeen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Seventeen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#maxwelltriangle-class">MaxwellTriangle Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MaxwellTriangle"><code class="docutils literal notranslate"><span class="pre">MaxwellTriangle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MaxwellTriangle.__init__"><code class="docutils literal notranslate"><span class="pre">MaxwellTriangle.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MaxwellTriangle.draw_triangle"><code class="docutils literal notranslate"><span class="pre">MaxwellTriangle.draw_triangle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MaxwellTriangle.rgb_to_xy"><code class="docutils literal notranslate"><span class="pre">MaxwellTriangle.rgb_to_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MaxwellTriangle.show"><code class="docutils literal notranslate"><span class="pre">MaxwellTriangle.show()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MaxwellTriangle.save"><code class="docutils literal notranslate"><span class="pre">MaxwellTriangle.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentythree.html">Question Twenty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyseven.html">Question Twenty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentyeight.html">Question Twenty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twentynine.html">Question Twenty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirty.html">Question Thirty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyone.html">Question Thirty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtytwo.html">Question Thirty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtythree.html">Question Thirty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfour.html">Question Thirty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyfive.html">Question Thirty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtysix.html">Question Thirty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyseven.html">Question Thirty Seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtyeight.html">Question Thirty Eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_thirtynine.html">Question Thirty Nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourty.html">Question Fourty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyone.html">Question Fourty One</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtytwo.html">Question Fourty Two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtythree.html">Question Fourty Three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfour.html">Question Fourty Four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyfive.html">Question Fourty Five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtysix.html">Question Fourty Six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_fourtyseven.html">Question Fourty Seven</a></li>
 </ul>
 
         </div>
@@ -94,6 +134,92 @@
              
   <section id="question-seventeen">
 <h1>Question Seventeen<a class="headerlink" href="#question-seventeen" title="Link to this heading"></a></h1>
+<p>The color gamut in chromaticity coordinates is equivalent to the triangle in RGB space
+that is defined by the primaries. Write a program that will display this triangle and the
+edges of the cube in which it lies. Each point on the triangle should have the color
+determined by its coordinates in RGB space. This triangle is called the Maxwell triangle.</p>
+<section id="maxwelltriangle-class">
+<h2>MaxwellTriangle Class<a class="headerlink" href="#maxwelltriangle-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MaxwellTriangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MaxwellTriangle</span></span><a class="headerlink" href="#MaxwellTriangle" title="Link to this definition"></a></dt>
+<dd><p>A class for generating and displaying the Maxwell Triangle with RGB cube edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Size of the output image.</p></li>
+<li><p><strong>image</strong> (<em>PIL.Image</em>) – Image object for storing the generated image.</p></li>
+<li><p><strong>draw</strong> (<em>PIL.ImageDraw</em>) – Draw object for drawing on the image.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MaxwellTriangle.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MaxwellTriangle.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the MaxwellTriangle object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – Size of the output image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MaxwellTriangle.draw_triangle">
+<span class="sig-name descname"><span class="pre">draw_triangle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MaxwellTriangle.draw_triangle" title="Link to this definition"></a></dt>
+<dd><p>Draw the Maxwell triangle and the edges of the RGB cube.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MaxwellTriangle.rgb_to_xy">
+<span class="sig-name descname"><span class="pre">rgb_to_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MaxwellTriangle.rgb_to_xy" title="Link to this definition"></a></dt>
+<dd><p>Convert RGB coordinates to image coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb</strong> (<em>tuple</em>) – RGB coordinates.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple of image coordinates.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MaxwellTriangle.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MaxwellTriangle.show" title="Link to this definition"></a></dt>
+<dd><p>Display the generated image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MaxwellTriangle.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MaxwellTriangle.save" title="Link to this definition"></a></dt>
+<dd><p>Save the generated image to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Name of the file to save the image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Set the size parameter</span>
+    <span class="n">image_size</span> <span class="o">=</span> <span class="mi">500</span>
+
+    <span class="c1"># Create a MaxwellTriangle object</span>
+    <span class="n">maxwell_triangle</span> <span class="o">=</span> <span class="n">MaxwellTriangle</span><span class="p">(</span><span class="n">image_size</span><span class="p">)</span>
+
+    <span class="c1"># Draw and display the Maxwell triangle with RGB cube edges</span>
+    <span class="n">maxwell_triangle</span><span class="o">.</span><span class="n">draw_triangle</span><span class="p">()</span>
+    <span class="n">maxwell_triangle</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Save the image to a file</span>
+    <span class="n">maxwell_triangle</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;maxwell_triangle_oop.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 

@@ -20,6 +20,9 @@ To draw a quadratic Bézier curve using straight lines within a given tolerance 
     Initialize: Call the recursive function with the initial control points P1, P2, P3, t=0, and τ.
     Output: The list of line segments approximating the quadratic Bézier curve.
 
+QuadraticBezierDrawer Class
+---------------------------
+
 .. py:class:: QuadraticBezierDrawer
 
    A class for drawing a quadratic Bézier curve using straight lines within a given tolerance τ.
