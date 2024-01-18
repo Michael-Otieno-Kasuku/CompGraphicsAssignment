@@ -2,7 +2,6 @@ from PIL import Image, ImageDraw
 
 class PNGWriter:
     def __init__(self, width, height):
-        
         self.image = Image.new("RGB", (width, height), color="white")
         self.draw = ImageDraw.Draw(self.image)
 

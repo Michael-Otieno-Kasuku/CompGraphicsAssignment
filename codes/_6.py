@@ -25,7 +25,7 @@ class MeshSubdivision:
         new_triangles = []
         for triangle in triangles:
             midpoints = [((points[i][0] + points[j][0]) // 2, (points[i][1] + points[j][1]) // 2)
-                         for i, j in zip(triangle, tuple(triangle[1:]) + (triangle[0],))]
+            for i, j in zip(triangle, tuple(triangle[1:]) + (triangle[0],))]
             new_indices = list(range(len(new_points), len(new_points) + len(midpoints)))
             new_points.extend(midpoints)
             new_triangles.extend([

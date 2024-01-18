@@ -11,13 +11,21 @@ An algorithm that draws the quadratic B ́ezier curve, using straight lines only
 To draw a quadratic Bézier curve using straight lines within a given tolerance τ, you can use a recursive approach to approximate the curve with line segments. Here's a high-level description of the algorithm:
 
     Input: Three control points P1, P2, and P3, and a tolerance τ.
+    
     Initialize: Set t = 0 and create an empty list to store line segments.
+    
     Recursive Function: Implement a recursive function that takes the control points, the current parameter t, and the tolerance τ as parameters. The function should do the following:
+    
     a. Calculate the Bézier curve point P(t) using the given formula.
+    
     b. Check if the distance between P(t) and the line segment connecting P1 and P3 is less than τ. If true, add the line segment (P1, P3) to the list and return.
+    
     c. If not, calculate midpoints P12 and P23 of the line segments (P1, P2) and (P2, P3).
+    
     d. Recursively call the function for the control points (P1, P12, P(t)), (P(t), P23, P3).
+    
     Initialize: Call the recursive function with the initial control points P1, P2, P3, t=0, and τ.
+    
     Output: The list of line segments approximating the quadratic Bézier curve.
 
 QuadraticBezierDrawer Class

@@ -82,6 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="question_seventeen.html">Question Seventeen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_nineteen.html#webgl-paint-program">WebGL Paint Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
@@ -147,15 +148,17 @@ you already have an algorithm for drawing a straight line.</p>
 <h2>An algorithm that draws the quadratic B ́ezier curve, using straight lines only, to within a tolerance τ<a class="headerlink" href="#an-algorithm-that-draws-the-quadratic-b-ezier-curve-using-straight-lines-only-to-within-a-tolerance" title="Link to this heading"></a></h2>
 <p>To draw a quadratic Bézier curve using straight lines within a given tolerance τ, you can use a recursive approach to approximate the curve with line segments. Here’s a high-level description of the algorithm:</p>
 <blockquote>
-<div><p>Input: Three control points P1, P2, and P3, and a tolerance τ.
-Initialize: Set t = 0 and create an empty list to store line segments.
-Recursive Function: Implement a recursive function that takes the control points, the current parameter t, and the tolerance τ as parameters. The function should do the following:
-a. Calculate the Bézier curve point P(t) using the given formula.
-b. Check if the distance between P(t) and the line segment connecting P1 and P3 is less than τ. If true, add the line segment (P1, P3) to the list and return.
-c. If not, calculate midpoints P12 and P23 of the line segments (P1, P2) and (P2, P3).
-d. Recursively call the function for the control points (P1, P12, P(t)), (P(t), P23, P3).
-Initialize: Call the recursive function with the initial control points P1, P2, P3, t=0, and τ.
-Output: The list of line segments approximating the quadratic Bézier curve.</p>
+<div><p>Input: Three control points P1, P2, and P3, and a tolerance τ.</p>
+<p>Initialize: Set t = 0 and create an empty list to store line segments.</p>
+<p>Recursive Function: Implement a recursive function that takes the control points, the current parameter t, and the tolerance τ as parameters. The function should do the following:</p>
+<ol class="loweralpha simple">
+<li><p>Calculate the Bézier curve point P(t) using the given formula.</p></li>
+<li><p>Check if the distance between P(t) and the line segment connecting P1 and P3 is less than τ. If true, add the line segment (P1, P3) to the list and return.</p></li>
+<li><p>If not, calculate midpoints P12 and P23 of the line segments (P1, P2) and (P2, P3).</p></li>
+<li><p>Recursively call the function for the control points (P1, P12, P(t)), (P(t), P23, P3).</p></li>
+</ol>
+<p>Initialize: Call the recursive function with the initial control points P1, P2, P3, t=0, and τ.</p>
+<p>Output: The list of line segments approximating the quadratic Bézier curve.</p>
 </div></blockquote>
 </section>
 <section id="quadraticbezierdrawer-class">
