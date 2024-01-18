@@ -1,4 +1,4 @@
-Question Tweleve
+Question Twelve
 ================
 Plotting packages offer a variety of methods for displaying data. Write an interactive
 plotting application for two-dimensional curves. Your application should allow the user
