@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question eight &mdash; Computer Graphics Programming Assignment 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Question nine" href="question_nine.html" />
+    <link rel="prev" title="Question seven" href="question_seven.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Computer Graphics Programming Assignment
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="question_one.html">Question one</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_two.html">Question two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_three.html">Question three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_four.html">Question four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_five.html">Question five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_six.html">Question six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_seven.html">Question seven</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question eight</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#RotatingCube"><code class="docutils literal notranslate"><span class="pre">RotatingCube</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#RotatingCube.__init__"><code class="docutils literal notranslate"><span class="pre">RotatingCube.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RotatingCube.calculate_cube_vertices"><code class="docutils literal notranslate"><span class="pre">RotatingCube.calculate_cube_vertices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RotatingCube.draw_cube"><code class="docutils literal notranslate"><span class="pre">RotatingCube.draw_cube()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RotatingCube.update_rotation"><code class="docutils literal notranslate"><span class="pre">RotatingCube.update_rotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RotatingCube.draw_polygon"><code class="docutils literal notranslate"><span class="pre">RotatingCube.draw_polygon()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RotatingCube.main"><code class="docutils literal notranslate"><span class="pre">RotatingCube.main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="question_nine.html">Question nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_ten.html">Question ten</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Computer Graphics Programming Assignment</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Question eight</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/question_eight.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="question-eight">
+<h1>Question eight<a class="headerlink" href="#question-eight" title="Link to this heading"></a></h1>
+<p>Implement the suggestion about displaying a rotating cube in the program. Add a button
+that, when the cube is loaded, can update the locations of the cube vertices by computing
+them with a new value of t, the amount to rotate. To make the animation look smooth, try
+changing t by .05 radians per button click.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="RotatingCube">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RotatingCube</span></span><a class="headerlink" href="#RotatingCube" title="Link to this definition"></a></dt>
+<dd><p>A class for displaying a rotating cube using Tkinter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>master</strong> (<em>tk.Tk</em>) – The main Tkinter window.</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the canvas.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the canvas.</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – Current rotation angle.</p></li>
+<li><p><strong>cube_size</strong> (<em>int</em>) – Size of the cube.</p></li>
+<li><p><strong>vertices</strong> (<em>list</em>) – List of cube vertices.</p></li>
+<li><p><strong>canvas</strong> (<em>tk.Canvas</em>) – Tkinter canvas for drawing the cube.</p></li>
+<li><p><strong>update_button</strong> (<em>tk.Button</em>) – Tkinter button for updating the rotation.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="RotatingCube.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RotatingCube.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RotatingCube object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>master</strong> (<em>tk.Tk</em>) – The main Tkinter window.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RotatingCube.calculate_cube_vertices">
+<span class="sig-name descname"><span class="pre">calculate_cube_vertices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RotatingCube.calculate_cube_vertices" title="Link to this definition"></a></dt>
+<dd><p>Calculate the vertices of the cube based on the current rotation angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of cube vertices.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RotatingCube.draw_cube">
+<span class="sig-name descname"><span class="pre">draw_cube</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RotatingCube.draw_cube" title="Link to this definition"></a></dt>
+<dd><p>Draw the cube on the canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RotatingCube.update_rotation">
+<span class="sig-name descname"><span class="pre">update_rotation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RotatingCube.update_rotation" title="Link to this definition"></a></dt>
+<dd><p>Update the rotation angle and redraw the cube with smooth transitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RotatingCube.draw_polygon">
+<span class="sig-name descname"><span class="pre">draw_polygon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RotatingCube.draw_polygon" title="Link to this definition"></a></dt>
+<dd><p>Draw a polygon on the canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>face</strong> (<em>list</em>) – List of vertices forming the polygon.</p></li>
+<li><p><strong>color</strong> (<em>str</em>) – Fill color of the polygon.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RotatingCube.main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RotatingCube.main" title="Link to this definition"></a></dt>
+<dd><p>Main function to demonstrate the RotatingCube class.</p>
+<dl class="simple">
+<dt>Constants:</dt><dd><ul class="simple">
+<li><p>width (int): Width of the canvas (400).</p></li>
+<li><p>height (int): Height of the canvas (400).</p></li>
+<li><p>t (float): Initial rotation angle (0).</p></li>
+<li><p>cube_size (int): Size of the cube (100).</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>Create an instance of RotatingCube.</p></li>
+<li><p>Draw the rotating cube on the canvas.</p></li>
+<li><p>Use the button to update the rotation.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+    <span class="n">rotating_cube</span> <span class="o">=</span> <span class="n">RotatingCube</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="question_seven.html" class="btn btn-neutral float-left" title="Question seven" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="question_nine.html" class="btn btn-neutral float-right" title="Question nine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku and Felix Njunguna Kimani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

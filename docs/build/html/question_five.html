@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question five &mdash; Computer Graphics Programming Assignment 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Question six" href="question_six.html" />
+    <link rel="prev" title="Question four" href="question_four.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Computer Graphics Programming Assignment
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="question_one.html">Question one</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_two.html">Question two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_three.html">Question three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_four.html">Question four</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question five</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#an-algorithm-that-draws-the-quadratic-b-ezier-curve-using-straight-lines-only-to-within-a-tolerance">An algorithm that draws the quadratic B ́ezier curve, using straight lines only, to within a tolerance τ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#QuadraticBezierDrawer"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.__init__"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.interpolate"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.interpolate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.draw_line"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.draw_line()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.draw_quadratic_bezier"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.draw_quadratic_bezier()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.line_segment"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.line_segment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.distance"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.save_image"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.save_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#QuadraticBezierDrawer.main"><code class="docutils literal notranslate"><span class="pre">QuadraticBezierDrawer.main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="question_six.html">Question six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_seven.html">Question seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_eight.html">Question eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_nine.html">Question nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_ten.html">Question ten</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Computer Graphics Programming Assignment</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Question five</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/question_five.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="question-five">
+<h1>Question five<a class="headerlink" href="#question-five" title="Link to this heading"></a></h1>
+<p>A quadratic B ́ezier curve is defined by three points, P1, P2, P3, and a parameter, t:
+P(t) = (1−t) 2 P 1 + 2t(1−t)P 2 + t 2 P 3 , 0 ≤ t ≤ 1
+Describe an algorithm that draws the quadratic B ́ezier curve, using straight lines only, to
+within a tolerance τ. You may use the algorithm from part (a) and you may assume that
+you already have an algorithm for drawing a straight line.</p>
+<section id="an-algorithm-that-draws-the-quadratic-b-ezier-curve-using-straight-lines-only-to-within-a-tolerance">
+<h2>An algorithm that draws the quadratic B ́ezier curve, using straight lines only, to within a tolerance τ<a class="headerlink" href="#an-algorithm-that-draws-the-quadratic-b-ezier-curve-using-straight-lines-only-to-within-a-tolerance" title="Link to this heading"></a></h2>
+<p>To draw a quadratic Bézier curve using straight lines within a given tolerance τ, you can use a recursive approach to approximate the curve with line segments. Here’s a high-level description of the algorithm:</p>
+<blockquote>
+<div><p>Input: Three control points P1, P2, and P3, and a tolerance τ.
+Initialize: Set t = 0 and create an empty list to store line segments.
+Recursive Function: Implement a recursive function that takes the control points, the current parameter t, and the tolerance τ as parameters. The function should do the following:
+a. Calculate the Bézier curve point P(t) using the given formula.
+b. Check if the distance between P(t) and the line segment connecting P1 and P3 is less than τ. If true, add the line segment (P1, P3) to the list and return.
+c. If not, calculate midpoints P12 and P23 of the line segments (P1, P2) and (P2, P3).
+d. Recursively call the function for the control points (P1, P12, P(t)), (P(t), P23, P3).
+Initialize: Call the recursive function with the initial control points P1, P2, P3, t=0, and τ.
+Output: The list of line segments approximating the quadratic Bézier curve.</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">QuadraticBezierDrawer</span></span><a class="headerlink" href="#QuadraticBezierDrawer" title="Link to this definition"></a></dt>
+<dd><p>A class for drawing a quadratic Bézier curve using straight lines within a given tolerance τ.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – Width of the image.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the image.</p></li>
+<li><p><strong>image</strong> (<em>PIL.Image.Image</em>) – The image object used for drawing the Bézier curve.</p></li>
+<li><p><strong>draw</strong> (<em>PIL.ImageDraw.ImageDraw</em>) – The drawing context for the image.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the QuadraticBezierDrawer object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – Width of the image.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.interpolate" title="Link to this definition"></a></dt>
+<dd><p>Interpolate between two points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point1</strong> (<em>tuple</em>) – First point (x, y).</p></li>
+<li><p><strong>point2</strong> (<em>tuple</em>) – Second point (x, y).</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – Interpolation parameter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Interpolated point (x, y).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.draw_line">
+<span class="sig-name descname"><span class="pre">draw_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.draw_line" title="Link to this definition"></a></dt>
+<dd><p>Draw a line between two points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point1</strong> (<em>tuple</em>) – First point (x, y).</p></li>
+<li><p><strong>point2</strong> (<em>tuple</em>) – Second point (x, y).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.draw_quadratic_bezier">
+<span class="sig-name descname"><span class="pre">draw_quadratic_bezier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.draw_quadratic_bezier" title="Link to this definition"></a></dt>
+<dd><p>Draw a quadratic Bézier curve using straight lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>P1</strong> (<em>tuple</em>) – First control point (x, y).</p></li>
+<li><p><strong>P2</strong> (<em>tuple</em>) – Second control point (x, y).</p></li>
+<li><p><strong>P3</strong> (<em>tuple</em>) – Third control point (x, y).</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – Interpolation parameter.</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em>) – Tolerance for approximation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.line_segment">
+<span class="sig-name descname"><span class="pre">line_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.line_segment" title="Link to this definition"></a></dt>
+<dd><p>Define a line segment by two points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point1</strong> (<em>tuple</em>) – First point (x, y).</p></li>
+<li><p><strong>point2</strong> (<em>tuple</em>) – Second point (x, y).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Line segment represented by two points.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_segment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.distance" title="Link to this definition"></a></dt>
+<dd><p>Calculate the distance between a point and a line segment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> (<em>tuple</em>) – Point (x, y).</p></li>
+<li><p><strong>line_segment</strong> (<em>list</em>) – Line segment represented by two points.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Distance between the point and the line segment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.save_image">
+<span class="sig-name descname"><span class="pre">save_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.save_image" title="Link to this definition"></a></dt>
+<dd><p>Save the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Filename to save the image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="QuadraticBezierDrawer.main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QuadraticBezierDrawer.main" title="Link to this definition"></a></dt>
+<dd><p>Main function to demonstrate the QuadraticBezierDrawer class.</p>
+<dl class="simple">
+<dt>Constants:</dt><dd><ul class="simple">
+<li><p>P1 (tuple): First control point (50, 250).</p></li>
+<li><p>P2 (tuple): Second control point (150, 50).</p></li>
+<li><p>P3 (tuple): Third control point (250, 250).</p></li>
+<li><p>t (float): Interpolation parameter (0).</p></li>
+<li><p>tolerance (float): Tolerance for approximation (2).</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>Create an instance of QuadraticBezierDrawer.</p></li>
+<li><p>Draw a quadratic Bézier curve using draw_quadratic_bezier.</p></li>
+<li><p>Save the image.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">bezier_drawer</span> <span class="o">=</span> <span class="n">QuadraticBezierDrawer</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+    <span class="n">P1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+    <span class="n">P2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">P3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">tolerance</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="n">bezier_drawer</span><span class="o">.</span><span class="n">draw_quadratic_bezier</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span> <span class="n">P2</span><span class="p">,</span> <span class="n">P3</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+    <span class="n">bezier_drawer</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s2">&quot;quadratic_bezier_oop.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="question_four.html" class="btn btn-neutral float-left" title="Question four" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="question_six.html" class="btn btn-neutral float-right" title="Question six" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku and Felix Njunguna Kimani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

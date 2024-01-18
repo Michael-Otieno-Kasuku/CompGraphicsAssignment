@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question one &mdash; Computer Graphics Programming Assignment 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Question two" href="question_two.html" />
+    <link rel="prev" title="Welcome to Computer Graphics Programming Assignment’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Computer Graphics Programming Assignment
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question one</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#PNGWriter"><code class="docutils literal notranslate"><span class="pre">PNGWriter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#PNGWriter.__init__"><code class="docutils literal notranslate"><span class="pre">PNGWriter.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PNGWriter.save"><code class="docutils literal notranslate"><span class="pre">PNGWriter.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PNGWriter.draw_primary_diagonal"><code class="docutils literal notranslate"><span class="pre">PNGWriter.draw_primary_diagonal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PNGWriter.draw_secondary_diagonal"><code class="docutils literal notranslate"><span class="pre">PNGWriter.draw_secondary_diagonal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PNGWriter.fill_quadrant"><code class="docutils literal notranslate"><span class="pre">PNGWriter.fill_quadrant()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="question_two.html">Question two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_three.html">Question three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_four.html">Question four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_five.html">Question five</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_six.html">Question six</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_seven.html">Question seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_eight.html">Question eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_nine.html">Question nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_ten.html">Question ten</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Computer Graphics Programming Assignment</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Question one</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/question_one.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="question-one">
+<h1>Question one<a class="headerlink" href="#question-one" title="Link to this heading"></a></h1>
+<p>Using the PNGWriter class, write a program to create a PNG image (called image.png)
+with dimensions 300 pixels by 300 pixels and containing a red primary diagonal line (top
+left to bottom right) and a green secondary diagonal line (bottom left to top right), then
+fill the lowest bounded quadrant in blue. 10 Marks</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="PNGWriter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PNGWriter</span></span><a class="headerlink" href="#PNGWriter" title="Link to this definition"></a></dt>
+<dd><p>PNGWriter class for creating and manipulating PNG images using PIL (Pillow).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – Width of the image.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the image.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="PNGWriter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PNGWriter.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the PNGWriter with the specified width and height.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – Width of the image.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PNGWriter.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PNGWriter.save" title="Link to this definition"></a></dt>
+<dd><p>Save the generated image to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The name of the file to save the image to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PNGWriter.draw_primary_diagonal">
+<span class="sig-name descname"><span class="pre">draw_primary_diagonal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PNGWriter.draw_primary_diagonal" title="Link to this definition"></a></dt>
+<dd><p>Draw the primary diagonal of the image with the specified color.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>str</em>) – Color of the diagonal line.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PNGWriter.draw_secondary_diagonal">
+<span class="sig-name descname"><span class="pre">draw_secondary_diagonal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PNGWriter.draw_secondary_diagonal" title="Link to this definition"></a></dt>
+<dd><p>Draw the secondary diagonal of the image with the specified color.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>str</em>) – Color of the diagonal line.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PNGWriter.fill_quadrant">
+<span class="sig-name descname"><span class="pre">fill_quadrant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrant</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PNGWriter.fill_quadrant" title="Link to this definition"></a></dt>
+<dd><p>Fill a specified quadrant of the image with the specified color.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<em>str</em>) – Color to fill the quadrant with.</p></li>
+<li><p><strong>quadrant</strong> (<em>int</em>) – Quadrant to fill (0: top-left, 1: top-right, 2: bottom-left, 3: bottom-right).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Computer Graphics Programming Assignment’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="question_two.html" class="btn btn-neutral float-right" title="Question two" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku and Felix Njunguna Kimani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

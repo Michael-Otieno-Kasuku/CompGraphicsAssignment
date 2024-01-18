@@ -1,11 +1,3 @@
-"""
-Using PIL for Python and docstrings:
-Implement the suggestion about displaying a rotating cube in the program. Add a button
-that, when the cube is loaded, can update the locations of the cube vertices by computing
-them with a new value of t, the amount to rotate. To make the animation look smooth, try
-changing t by .05 radians per button click.
-"""
-
 from PIL import Image, ImageDraw
 from PIL import ImageTk
 import tkinter as tk

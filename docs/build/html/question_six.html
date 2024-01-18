@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question six &mdash; Computer Graphics Programming Assignment 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Question seven" href="question_seven.html" />
+    <link rel="prev" title="Question five" href="question_five.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Computer Graphics Programming Assignment
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="question_one.html">Question one</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_two.html">Question two</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_three.html">Question three</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_four.html">Question four</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_five.html">Question five</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question six</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#MeshSubdivision"><code class="docutils literal notranslate"><span class="pre">MeshSubdivision</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MeshSubdivision.__init__"><code class="docutils literal notranslate"><span class="pre">MeshSubdivision.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MeshSubdivision.generate_random_mesh"><code class="docutils literal notranslate"><span class="pre">MeshSubdivision.generate_random_mesh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MeshSubdivision.draw_mesh"><code class="docutils literal notranslate"><span class="pre">MeshSubdivision.draw_mesh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MeshSubdivision.subdivide_mesh"><code class="docutils literal notranslate"><span class="pre">MeshSubdivision.subdivide_mesh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MeshSubdivision.average_mesh"><code class="docutils literal notranslate"><span class="pre">MeshSubdivision.average_mesh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MeshSubdivision.save_image"><code class="docutils literal notranslate"><span class="pre">MeshSubdivision.save_image()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="question_seven.html">Question seven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_eight.html">Question eight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_nine.html">Question nine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_ten.html">Question ten</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Computer Graphics Programming Assignment</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Question six</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/question_six.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="question-six">
+<h1>Question six<a class="headerlink" href="#question-six" title="Link to this heading"></a></h1>
+<p>How are curves like the B ́ezier curve and the B-spline curve useful? 2 Marks. Give an
+application where a curve can be used as a reference. Write a program to carry out
+subdivision of triangular or quadrilateral meshes. When the subdivision is working
+correctly, add the averaging step to form a smoother surface.</p>
+<ol class="arabic simple">
+<li><p>Bezier Curve and B-spline Curve Utility (1 mark): Both Bézier curves and B-spline curves are widely used in computer graphics and computer-aided design. They provide a flexible and intuitive way to represent and manipulate curves and surfaces, making them valuable in various applications.</p></li>
+<li><p>Application Example (1 mark): One application where curves can be used as a reference is in computer-aided design (CAD). In CAD systems, Bézier curves and B-spline curves are often employed to model and represent shapes of objects. Designers can control the shape of curves by adjusting control points, allowing for precise and smooth curve manipulation. This is crucial in designing anything from automotive parts to consumer products.</p></li>
+</ol>
+<dl class="py class">
+<dt class="sig sig-object py" id="MeshSubdivision">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MeshSubdivision</span></span><a class="headerlink" href="#MeshSubdivision" title="Link to this definition"></a></dt>
+<dd><p>The MeshSubdivision class provides functionality for generating, subdividing, and visualizing triangular meshes using the Python Imaging Library (PIL).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – Width of the image.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the image.</p></li>
+<li><p><strong>num_iterations</strong> (<em>int</em>) – Number of subdivision iterations.</p></li>
+<li><p><strong>image</strong> (<em>Image</em>) – Image object.</p></li>
+<li><p><strong>draw</strong> (<em>ImageDraw.Draw</em>) – Drawing object for the image.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MeshSubdivision.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_iterations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MeshSubdivision.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the MeshSubdivision object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – Width of the image.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Height of the image.</p></li>
+<li><p><strong>num_iterations</strong> (<em>int</em>) – Number of subdivision iterations.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MeshSubdivision.generate_random_mesh">
+<span class="sig-name descname"><span class="pre">generate_random_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_triangles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MeshSubdivision.generate_random_mesh" title="Link to this definition"></a></dt>
+<dd><p>Generate a random triangular mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_points</strong> (<em>int</em>) – Number of mesh points.</p></li>
+<li><p><strong>num_triangles</strong> (<em>int</em>) – Number of triangles in the mesh.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of points and triangles forming the mesh.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MeshSubdivision.draw_mesh">
+<span class="sig-name descname"><span class="pre">draw_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triangles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MeshSubdivision.draw_mesh" title="Link to this definition"></a></dt>
+<dd><p>Draw the triangular mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>list</em>) – List of points.</p></li>
+<li><p><strong>triangles</strong> (<em>list</em>) – List of triangles represented by point indices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MeshSubdivision.subdivide_mesh">
+<span class="sig-name descname"><span class="pre">subdivide_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triangles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MeshSubdivision.subdivide_mesh" title="Link to this definition"></a></dt>
+<dd><p>Subdivide the triangular mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>list</em>) – List of points.</p></li>
+<li><p><strong>triangles</strong> (<em>list</em>) – List of triangles represented by point indices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of points and triangles after subdivision.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MeshSubdivision.average_mesh">
+<span class="sig-name descname"><span class="pre">average_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triangles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MeshSubdivision.average_mesh" title="Link to this definition"></a></dt>
+<dd><p>Average the mesh to form a smoother surface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>list</em>) – List of points.</p></li>
+<li><p><strong>triangles</strong> (<em>list</em>) – List of triangles represented by point indices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of points and triangles after averaging.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MeshSubdivision.save_image">
+<span class="sig-name descname"><span class="pre">save_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MeshSubdivision.save_image" title="Link to this definition"></a></dt>
+<dd><p>Save the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Filename to save the image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="question_five.html" class="btn btn-neutral float-left" title="Question five" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="question_seven.html" class="btn btn-neutral float-right" title="Question seven" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku and Felix Njunguna Kimani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
