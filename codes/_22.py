@@ -1,10 +1,6 @@
 """
-Using PIL for Python and docstrings and OOP:
-
-22. Write a program that allows you to orient the cube with one mouse button, to translate it
-with a second, and to zoom in and out with a third.
+Make sure you include Pygame as well.
 """
-
 import tkinter as tk
 from PIL import Image, ImageDraw, ImageTk
 import math

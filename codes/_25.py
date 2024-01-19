@@ -1,10 +1,6 @@
 """
-Using PIL for Python and docstrings and OOP:
-
-25. Write a program to display a rotating cube in a box with three light sources. Each light
-source should project the cube onto one of the three visible sides of the box.
+Also make use of Pygame.
 """
-
 import tkinter as tk
 from PIL import Image, ImageDraw, ImageTk
 import math

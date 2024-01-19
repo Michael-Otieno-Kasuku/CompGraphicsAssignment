@@ -1,93 +1,144 @@
-"""
-Using PIL for Python and docstrings and OOP:
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QSlider, QVBoxLayout, QWidget, QOpenGLWidget, QSizePolicy
+from PyQt5.QtCore import Qt, QTimer
+from OpenGL.GL import glEnable, glBlendFunc, glClear, glClearColor, glColor4f, glBegin, glEnd, glVertex2f, GL_COLOR_BUFFER_BIT, GL_POLYGON
+from OpenGL.GL import GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_BLEND
+import math
 
-23. Write a program that draws three black dots of radius 0.25 at x = 0, 1, 2 along the x-axis.
-Then display instead three black dots at positions t, t + 1, and t + 2 (using t = 0. 25
-initially). Make the display toggle back and forth between the two sets of dots, onceevery quarter-second. Do you tend to see the dots as moving? What if you increase t to 0.5? Include a slider that lets you adjust t from 0 to 3. Does the illusion of the dots moving ever weaken? When t = 1, you could interpret the motion as “the outer dot jumps back
-and forth from the far left (x = 0) to the far right (x = 3) while the middle two dots remain
-fixed.” Can you persuade yourself that this is what you’re seeing? The strong impression
-that the dots are moving as a group is remarkably hard to abandon, supporting the Gestalt
-theory.
-"""
+class OpenGLWidget(QOpenGLWidget):
+    """
+    Custom QOpenGLWidget for rendering dynamic dots.
+    """
 
-import tkinter as tk
-from PIL import Image, ImageDraw, ImageTk
-import time
-
-
-class MovingDotsApp(tk.Tk):
-    def __init__(self):
+    def __init__(self, parent=None):
         """
-        GUI application for displaying moving dots along the x-axis.
-        """
-        super().__init__()
-
-        self.size = 400
-        self.dot_radius = 0.25
-        self.dot_spacing = 1.0
-        self.t = 0.25
-        self.timer_interval = 250  # milliseconds
-
-        self.canvas = tk.Canvas(self, width=self.size, height=self.size, background='white')
-        self.canvas.pack()
-
-        self.slider = tk.Scale(self, from_=0, to=3, resolution=0.01, orient=tk.HORIZONTAL, label="t", length=300,
-                               command=self.update_t)
-        self.slider.set(self.t)
-        self.slider.pack()
-
-        self.dots_positions = [(0, 0), (0, 0), (0, 0)]  # Initial positions
-        self.is_set_1 = True  # Flag to toggle between two sets of dots
-
-        self.timer_callback()
-
-    def update_t(self, t):
-        """
-        Update the value of t based on the slider.
+        Constructor for the OpenGLWidget class.
 
         Parameters:
-        - t (float): The value of t from the slider.
+        - parent (QWidget): The parent widget.
         """
-        self.t = float(t)
-        self.update_dots_positions()
-        self.draw_dots()
+        super(OpenGLWidget, self).__init__(parent)
+        self.t = 0.25
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.updateDots)
+        self.timer.start(250)  # Update every 250 milliseconds
 
-    def update_dots_positions(self):
+    def initializeGL(self):
         """
-        Update the positions of the three dots based on the current value of t.
+        OpenGL initialization method.
         """
-        if self.is_set_1:
-            self.dots_positions = [(self.t, 0), (self.t + 1, 0), (self.t + 2, 0)]
-        else:
-            self.dots_positions = [(0, 0), (1, 0), (2, 0)]
+        pass
 
-    def draw_dots(self):
+    def resizeGL(self, w, h):
         """
-        Draw the three black dots on the canvas.
+        Resize event handler for OpenGL.
+        
+        Parameters:
+        - w (int): New width of the widget.
+        - h (int): New height of the widget.
         """
-        self.canvas.delete("dots")
-        for position in self.dots_positions:
-            x, y = position
-            dot_x = x * self.size / 3
-            dot_y = y * self.size / 3
-            self.canvas.create_oval(dot_x - self.dot_radius * self.size,
-                                    dot_y - self.dot_radius * self.size,
-                                    dot_x + self.dot_radius * self.size,
-                                    dot_y + self.dot_radius * self.size,
-                                    fill='black', tags="dots")
+        pass
 
-    def timer_callback(self):
+    def paintGL(self):
         """
-        Callback function for the timer to toggle between two sets of dots.
+        Paint event handler for OpenGL.
         """
-        self.is_set_1 = not self.is_set_1
-        self.update_dots_positions()
-        self.draw_dots()
-        self.after(self.timer_interval, self.timer_callback)
+        glClear(GL_COLOR_BUFFER_BIT)
+        
+        # Set background color
+        glClearColor(0.8, 0.8, 0.8, 1.0)  # Light gray background
+        
+        glEnable(GL_BLEND)
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+
+        # Set dot color to black
+        glColor = [0.0, 0.0, 0.0, 1.0]
+
+        # Draw three dots at initial positions
+        self.drawDot(0.0, 0.0, 0.25, glColor)
+        self.drawDot(1.0, 0.0, 0.25, glColor)
+        self.drawDot(2.0, 0.0, 0.25, glColor)
+
+        # Draw three dots at positions t, t + 1, and t + 2
+        self.drawDot(self.t, 0.0, 0.25, glColor)
+        self.drawDot(self.t + 1.0, 0.0, 0.25, glColor)
+        self.drawDot(self.t + 2.0, 0.0, 0.25, glColor)
+
+    def drawDot(self, x, y, radius, color):
+        """
+        Draw a dot on the OpenGL canvas.
+
+        Parameters:
+        - x (float): X-coordinate of the center of the dot.
+        - y (float): Y-coordinate of the center of the dot.
+        - radius (float): Radius of the dot.
+        - color (list): RGBA color values of the dot.
+        """
+        num_segments = 100
+        glBegin(GL_POLYGON)
+        glColor4f(*color)
+        for i in range(num_segments):
+            theta = 2.0 * math.pi * i / num_segments
+            dx = radius * math.cos(theta)
+            dy = radius * math.sin(theta)
+            glVertex2f(x + dx, y + dy)
+        glEnd()
+
+    def updateDots(self):
+        """
+        Update the position of the dots.
+        """
+        self.t += 0.25
+        if self.t > 3.0:
+            self.t = 0.25
+        self.update()
+
+
+class MainWindow(QMainWindow):
+    """
+    Main window for the application.
+    """
+
+    def __init__(self):
+        """
+        Constructor for the MainWindow class.
+        """
+        super(MainWindow, self).__init__()
+
+        self.centralWidget = QWidget(self)
+        self.setCentralWidget(self.centralWidget)
+
+        self.layout = QVBoxLayout(self.centralWidget)
+
+        self.openglWidget = OpenGLWidget(self)
+        self.layout.addWidget(self.openglWidget)
+
+        self.slider = QSlider(Qt.Horizontal)
+        self.slider.setMinimum(0)
+        self.slider.setMaximum(300)
+        self.slider.setValue(25)  # Initial value for t
+        self.slider.valueChanged.connect(self.updateT)
+        self.layout.addWidget(self.slider)
+
+        # Set the size policy for the OpenGLWidget
+        self.openglWidget.setSizePolicy(
+            QSizePolicy.Expanding, QSizePolicy.Expanding
+        )
+
+    def updateT(self, value):
+        """
+        Update the value of 't' based on the slider position.
+
+        Parameters:
+        - value (int): Slider position.
+        """
+        self.openglWidget.t = value / 100.0
+        self.openglWidget.update()
 
 
 if __name__ == '__main__':
-    app = MovingDotsApp()
-    app.title("Moving Dots")
-    app.geometry("500x600")
-    app.mainloop()
+    app = QApplication(sys.argv)
+    mainWindow = MainWindow()
+    mainWindow.showMaximized()  # Show the window maximized
+    sys.exit(app.exec_())
+

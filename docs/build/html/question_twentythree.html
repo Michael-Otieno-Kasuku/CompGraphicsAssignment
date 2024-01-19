@@ -57,7 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="question_nine.html">Question nine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_ten.html">Question ten</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eleven.html">Question Eleven</a></li>
-<li class="toctree-l1"><a class="reference internal" href="question_twelve.html">Question Tweleve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_twelve.html">Question Twelve</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_thirteen.html">Question Thirteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fourteen.html">Question Fourteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_fifteen.html">Question Fifteen</a></li>
@@ -65,10 +65,35 @@
 <li class="toctree-l1"><a class="reference internal" href="question_seventeen.html">Question Seventeen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_eighteen.html">Question Eighteen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_nineteen.html">Question Nineteen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question_nineteen.html#webgl-paint-program">WebGL Paint Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twenty.html">Question Twenty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twentyone.html">Question Twenty One</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twentytwo.html">Question Twenty Two</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Twenty Three</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Question Twenty Three</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#openglwidget-class">OpenGLWidget Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#OpenGLWidget"><code class="docutils literal notranslate"><span class="pre">OpenGLWidget</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#OpenGLWidget.__init__"><code class="docutils literal notranslate"><span class="pre">OpenGLWidget.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OpenGLWidget.initializeGL"><code class="docutils literal notranslate"><span class="pre">OpenGLWidget.initializeGL()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OpenGLWidget.resizeGL"><code class="docutils literal notranslate"><span class="pre">OpenGLWidget.resizeGL()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OpenGLWidget.paintGL"><code class="docutils literal notranslate"><span class="pre">OpenGLWidget.paintGL()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OpenGLWidget.drawDot"><code class="docutils literal notranslate"><span class="pre">OpenGLWidget.drawDot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OpenGLWidget.updateDots"><code class="docutils literal notranslate"><span class="pre">OpenGLWidget.updateDots()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mainwindow-class">MainWindow Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MainWindow.__init__"><code class="docutils literal notranslate"><span class="pre">MainWindow.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainWindow.updateT"><code class="docutils literal notranslate"><span class="pre">MainWindow.updateT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainWindow.showMaximized"><code class="docutils literal notranslate"><span class="pre">MainWindow.showMaximized()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainWindow.main"><code class="docutils literal notranslate"><span class="pre">MainWindow.main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="question_twentyfour.html">Question Twenty Four</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twentyfive.html">Question Twenty Five</a></li>
 <li class="toctree-l1"><a class="reference internal" href="question_twentysix.html">Question Twenty Six</a></li>
@@ -121,6 +146,141 @@
              
   <section id="question-twenty-three">
 <h1>Question Twenty Three<a class="headerlink" href="#question-twenty-three" title="Link to this heading"></a></h1>
+<p>Write a program that draws three black dots of radius 0.25 at x = 0, 1, 2 along the x-axis.
+Then display instead three black dots at positions t, t + 1, and t + 2 (using t = 0. 25
+initially). Make the display toggle back and forth between the two sets of dots, once every quarter-second. Do you tend to see the dots as moving? What if you increase t to 0.
+5? Include a slider that lets you adjust t from 0 to 3. Does the illusion of the dots moving
+ever weaken? When t = 1, you could interpret the motion as “the outer dot jumps back
+and forth from the far left (x = 0) to the far right (x = 3) while the middle two dots remain
+fixed.” Can you persuade yourself that this is what you’re seeing? The strong impression
+that the dots are moving as a group is remarkably hard to abandon, supporting the Gestalt
+theory.</p>
+<section id="openglwidget-class">
+<h2>OpenGLWidget Class<a class="headerlink" href="#openglwidget-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="OpenGLWidget">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OpenGLWidget</span></span><a class="headerlink" href="#OpenGLWidget" title="Link to this definition"></a></dt>
+<dd><p>It is a custom
+<code class="xref py py-class docutils literal notranslate"><span class="pre">QOpenGLWidget</span></code> for rendering dynamic dots.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – Current time for dot animation.</p></li>
+<li><p><strong>timer</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">QTimer</span></code> for periodic updates.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="OpenGLWidget.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OpenGLWidget.__init__" title="Link to this definition"></a></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#OpenGLWidget" title="OpenGLWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpenGLWidget</span></code></a> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parent</strong> – The parent widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OpenGLWidget.initializeGL">
+<span class="sig-name descname"><span class="pre">initializeGL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OpenGLWidget.initializeGL" title="Link to this definition"></a></dt>
+<dd><p>OpenGL initialization method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OpenGLWidget.resizeGL">
+<span class="sig-name descname"><span class="pre">resizeGL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OpenGLWidget.resizeGL" title="Link to this definition"></a></dt>
+<dd><p>Resize event handler for OpenGL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w</strong> – New width of the widget.</p></li>
+<li><p><strong>h</strong> – New height of the widget.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OpenGLWidget.paintGL">
+<span class="sig-name descname"><span class="pre">paintGL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OpenGLWidget.paintGL" title="Link to this definition"></a></dt>
+<dd><p>Paint event handler for OpenGL.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OpenGLWidget.drawDot">
+<span class="sig-name descname"><span class="pre">drawDot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OpenGLWidget.drawDot" title="Link to this definition"></a></dt>
+<dd><p>Draw a dot on the OpenGL canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – X-coordinate of the center of the dot.</p></li>
+<li><p><strong>y</strong> – Y-coordinate of the center of the dot.</p></li>
+<li><p><strong>radius</strong> – Radius of the dot.</p></li>
+<li><p><strong>color</strong> – RGBA color values of the dot.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OpenGLWidget.updateDots">
+<span class="sig-name descname"><span class="pre">updateDots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OpenGLWidget.updateDots" title="Link to this definition"></a></dt>
+<dd><p>Update the position of the dots.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="mainwindow-class">
+<h2>MainWindow Class<a class="headerlink" href="#mainwindow-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MainWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MainWindow</span></span><a class="headerlink" href="#MainWindow" title="Link to this definition"></a></dt>
+<dd><p>It is the main window for the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>centralWidget</strong> – The central widget of the main window.</p></li>
+<li><p><strong>layout</strong> – QVBoxLayout for arranging widgets.</p></li>
+<li><p><strong>openglWidget</strong> – Instance of <a class="reference internal" href="#OpenGLWidget" title="OpenGLWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpenGLWidget</span></code></a> for rendering dots.</p></li>
+<li><p><strong>slider</strong> – QSlider for controlling dot animation.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MainWindow.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainWindow.__init__" title="Link to this definition"></a></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#MainWindow" title="MainWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">MainWindow</span></code></a> class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainWindow.updateT">
+<span class="sig-name descname"><span class="pre">updateT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MainWindow.updateT" title="Link to this definition"></a></dt>
+<dd><p>Update the value of ‘t’ based on the slider position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – Slider position.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainWindow.showMaximized">
+<span class="sig-name descname"><span class="pre">showMaximized</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainWindow.showMaximized" title="Link to this definition"></a></dt>
+<dd><p>Show the window maximized.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainWindow.main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainWindow.main" title="Link to this definition"></a></dt>
+<dd><p>Main function to demonstrate the <a class="reference internal" href="#MainWindow" title="MainWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">MainWindow</span></code></a> class.</p>
+</dd></dl>
+
+<p>Inherits from: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code></p>
+</dd></dl>
+
+</section>
 </section>
 
 
